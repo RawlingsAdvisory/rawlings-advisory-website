@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-AU">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -160,7 +160,7 @@
     .marquee-track { display: flex; width: max-content; animation: marquee 95s linear infinite; }
     .no-motion .marquee-track { animation: none; }
 
-    .contact-field { width: 100%; border: none; border-bottom: 1.5px solid rgba(30,42,58,0.15); background: transparent; font-family: 'Lato', sans-serif; font-size: 15px; color: #1E2A3A; padding: 7px 2px; outline: none; transition: border-color 0.3s ease; }
+    .contact-field { width: 100%; border: none; border-bottom: 1.5px solid rgba(30,42,58,0.15); background: transparent; font-family: 'Lato', sans-serif; font-size: 16px; color: #1E2A3A; padding: 7px 2px; outline: none; transition: border-color 0.3s ease; }
     .contact-field::placeholder { color: rgba(30,42,58,0.35); }
     .contact-field:focus { border-bottom-color: #C8A96B; }
     textarea.contact-field { resize: none; min-height: 64px; padding-top: 8px; }
@@ -179,6 +179,9 @@
     .faq-a-inner { overflow: hidden; }
     .faq-a-inner p { margin: 0 2px 26px; max-width: 640px; font-size: 15.5px; line-height: 1.7; color: rgba(247,245,242,0.68); }
 
+    /* Offset anchor-scroll targets so section headings clear the fixed nav bar */
+    #about, #services, #how-we-work, #faq, #book-a-call, #contact, #sound-familiar { scroll-margin-top: 140px; }
+
     /* ============ RESPONSIVE ============ */
     .px90 { padding-left: 90px; padding-right: 90px; }
     .nav-toggle { display: none; }
@@ -188,6 +191,7 @@
     @media (max-width: 900px) {
       .px90 { padding-left: 48px !important; padding-right: 48px !important; }
       .site-nav { padding: 20px 24px !important; min-height: 92px !important; }
+      #about, #services, #how-we-work, #faq, #book-a-call, #contact, #sound-familiar { scroll-margin-top: 108px; }
       .nav-logo { height: 74px !important; }
       .nav-links-desktop { display: none !important; }
       .nav-toggle { display: flex !important; align-items: center; justify-content: center; background: none; border: none; cursor: pointer; padding: 8px; width: 40px; height: 40px; }
@@ -223,6 +227,7 @@
       .px90 { padding-left: 24px !important; padding-right: 24px !important; }
       .nav-logo { height: 58px !important; }
       .site-nav { min-height: 76px !important; }
+      #about, #services, #how-we-work, #faq, #book-a-call, #contact, #sound-familiar { scroll-margin-top: 92px; }
       .grid-benefits { grid-template-columns: 1fr !important; }
       .hero-ctas { flex-direction: column !important; align-items: stretch !important; }
       .hero-ctas a { text-align: center !important; }
