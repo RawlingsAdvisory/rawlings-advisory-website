@@ -156,8 +156,8 @@
     .benefit-icon { transition: transform 0.4s cubic-bezier(.34,1.56,.64,1); }
     .benefit-card:hover .benefit-icon { transform: scale(1.14); }
 
-    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-20%); } }
-    .marquee-track { display: flex; width: max-content; animation: marquee 30s linear infinite; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-25%); } }
+    .marquee-track { display: flex; width: max-content; animation: marquee 95s linear infinite; }
     .no-motion .marquee-track { animation: none; }
 
     .contact-field { width: 100%; border: none; border-bottom: 1.5px solid rgba(30,42,58,0.15); background: transparent; font-family: 'Lato', sans-serif; font-size: 15px; color: #1E2A3A; padding: 7px 2px; outline: none; transition: border-color 0.3s ease; }
@@ -204,8 +204,6 @@
       #services { padding-top: 28px !important; }
       #sound-familiar { padding-top: 28px !important; }
       #how-we-work { padding-top: 28px !important; }
-      #testimonials { padding-top: 28px !important; }
-      .grid-testimonials { grid-template-columns: repeat(2, 1fr) !important; }
       #faq { padding-top: 48px !important; }
       #book-a-call { padding-top: 48px !important; }
       #contact { padding-top: 40px !important; }
@@ -226,7 +224,6 @@
       .nav-logo { height: 58px !important; }
       .site-nav { min-height: 76px !important; }
       .grid-benefits { grid-template-columns: 1fr !important; }
-      .grid-testimonials { grid-template-columns: 1fr !important; }
       .hero-ctas { flex-direction: column !important; align-items: stretch !important; }
       .hero-ctas a { text-align: center !important; }
       .grid-form-row { grid-template-columns: 1fr !important; }
@@ -261,7 +258,6 @@
         <a href="#about" class="nav-link">About</a>
         <a href="#services" class="nav-link">Services</a>
         <a href="#how-we-work" class="nav-link">How We Work</a>
-        <a href="#testimonials" class="nav-link">Testimonials</a>
         <a href="#faq" class="nav-link">FAQ</a>
         <a href="#contact" class="nav-link">Contact</a>
       </div>
@@ -273,7 +269,6 @@
       <a href="#about" class="nav-mobile-link">About</a>
       <a href="#services" class="nav-mobile-link">Services</a>
       <a href="#how-we-work" class="nav-mobile-link">How We Work</a>
-      <a href="#testimonials" class="nav-mobile-link">Testimonials</a>
       <a href="#faq" class="nav-mobile-link">FAQ</a>
       <a href="#contact" class="nav-mobile-link">Contact</a>
     </div>
@@ -322,63 +317,75 @@
   <div style="padding:24px 0; background:#1E2A3A; overflow:hidden; border-top:1px solid rgba(247,245,242,0.12); border-bottom:1px solid rgba(247,245,242,0.12);">
     <div class="marquee-track">
       <div style="display:flex; align-items:center; gap:20px; padding-right:20px; flex-shrink:0;">
-        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">NDIS Providers</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Independent NDIS Providers</span>
         <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
-        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Aged Care Providers</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Boutique Home Care Operators</span>
         <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
-        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Disability Services</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Local Allied Health Practices</span>
         <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
-        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Allied Health</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">SIL &amp; Specialist Disability Accommodation (SDA) Providers</span>
         <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
-        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Equipment Suppliers</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Mobile Nursing &amp; Clinical Services</span>
         <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
-      </div>
-      <div style="display:flex; align-items:center; gap:20px; padding-right:20px; flex-shrink:0;">
-        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">NDIS Providers</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Support Coordination Consultants</span>
         <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
-        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Aged Care Providers</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Community &amp; Social Participation Services</span>
         <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
-        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Disability Services</span>
-        <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
-        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Allied Health</span>
-        <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
-        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Equipment Suppliers</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Local Equipment &amp; Assistive Tech Suppliers</span>
         <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
       </div>
       <div style="display:flex; align-items:center; gap:20px; padding-right:20px; flex-shrink:0;">
-        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">NDIS Providers</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Independent NDIS Providers</span>
         <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
-        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Aged Care Providers</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Boutique Home Care Operators</span>
         <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
-        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Disability Services</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Local Allied Health Practices</span>
         <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
-        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Allied Health</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">SIL &amp; Specialist Disability Accommodation (SDA) Providers</span>
         <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
-        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Equipment Suppliers</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Mobile Nursing &amp; Clinical Services</span>
         <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
-      </div>
-      <div style="display:flex; align-items:center; gap:20px; padding-right:20px; flex-shrink:0;">
-        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">NDIS Providers</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Support Coordination Consultants</span>
         <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
-        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Aged Care Providers</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Community &amp; Social Participation Services</span>
         <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
-        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Disability Services</span>
-        <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
-        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Allied Health</span>
-        <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
-        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Equipment Suppliers</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Local Equipment &amp; Assistive Tech Suppliers</span>
         <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
       </div>
       <div style="display:flex; align-items:center; gap:20px; padding-right:20px; flex-shrink:0;">
-        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">NDIS Providers</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Independent NDIS Providers</span>
         <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
-        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Aged Care Providers</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Boutique Home Care Operators</span>
         <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
-        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Disability Services</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Local Allied Health Practices</span>
         <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
-        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Allied Health</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">SIL &amp; Specialist Disability Accommodation (SDA) Providers</span>
         <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
-        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Equipment Suppliers</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Mobile Nursing &amp; Clinical Services</span>
+        <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Support Coordination Consultants</span>
+        <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Community &amp; Social Participation Services</span>
+        <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Local Equipment &amp; Assistive Tech Suppliers</span>
+        <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:20px; padding-right:20px; flex-shrink:0;">
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Independent NDIS Providers</span>
+        <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Boutique Home Care Operators</span>
+        <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Local Allied Health Practices</span>
+        <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">SIL &amp; Specialist Disability Accommodation (SDA) Providers</span>
+        <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Mobile Nursing &amp; Clinical Services</span>
+        <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Support Coordination Consultants</span>
+        <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Community &amp; Social Participation Services</span>
+        <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Local Equipment &amp; Assistive Tech Suppliers</span>
         <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
       </div>
     </div>
@@ -587,45 +594,6 @@
     </div>
   </div>
 
-  <!-- TESTIMONIALS -->
-  <div id="testimonials" class="px90" style="padding-top:72px; padding-bottom:80px; background:#F7F5F2;">
-    <div class="reveal" style="text-align:center; margin-bottom:56px;">
-      <div style="font-family:'Lato', sans-serif; font-weight:500; font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#C8A96B;">Testimonials</div>
-      <h2 style="margin:16px 0 0; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:clamp(28px, 4.5vw, 40px); color:#1E2A3A;">What Colleagues Say</h2>
-    </div>
-
-    <div class="grid-testimonials" style="max-width:1320px; margin:0 auto; display:grid; grid-template-columns:repeat(3, 1fr); gap:26px;">
-
-      <!-- Testimonial 1 -->
-      <div class="reveal reveal-delay-1" style="background:#F7F5F2; border:1.5px solid #C8A96B; border-radius:20px; padding:38px 32px; display:flex; flex-direction:column;">
-        <div style="font-family:'Cormorant Garamond', serif; font-weight:700; font-size:56px; line-height:0.5; color:#C8A96B; opacity:0.85;">&ldquo;</div>
-        <p style="margin:22px 0 0; font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:500; font-size:19px; line-height:1.5; color:#1E2A3A; flex-grow:1;">[Add a short quote here about the impact of working with Sophia — what changed, and what it meant for the business.]</p>
-        <div style="margin-top:22px; width:32px; height:2px; background:#C8A96B;"></div>
-        <div style="margin-top:14px; font-family:'Lato', sans-serif; font-weight:700; font-size:15px; color:#1E2A3A;">[Name]</div>
-        <div style="font-family:'Lato', sans-serif; font-weight:500; font-size:13px; color:rgba(30,42,58,0.6);">[Role, Organisation]</div>
-      </div>
-
-      <!-- Testimonial 2 -->
-      <div class="reveal reveal-delay-2" style="background:#F7F5F2; border:1.5px solid #C8A96B; border-radius:20px; padding:38px 32px; display:flex; flex-direction:column;">
-        <div style="font-family:'Cormorant Garamond', serif; font-weight:700; font-size:56px; line-height:0.5; color:#C8A96B; opacity:0.85;">&ldquo;</div>
-        <p style="margin:22px 0 0; font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:500; font-size:19px; line-height:1.5; color:#1E2A3A; flex-grow:1;">[Add a short quote here about the impact of working with Sophia — what changed, and what it meant for the business.]</p>
-        <div style="margin-top:22px; width:32px; height:2px; background:#C8A96B;"></div>
-        <div style="margin-top:14px; font-family:'Lato', sans-serif; font-weight:700; font-size:15px; color:#1E2A3A;">[Name]</div>
-        <div style="font-family:'Lato', sans-serif; font-weight:500; font-size:13px; color:rgba(30,42,58,0.6);">[Role, Organisation]</div>
-      </div>
-
-      <!-- Testimonial 3 -->
-      <div class="reveal reveal-delay-3" style="background:#F7F5F2; border:1.5px solid #C8A96B; border-radius:20px; padding:38px 32px; display:flex; flex-direction:column;">
-        <div style="font-family:'Cormorant Garamond', serif; font-weight:700; font-size:56px; line-height:0.5; color:#C8A96B; opacity:0.85;">&ldquo;</div>
-        <p style="margin:22px 0 0; font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:500; font-size:19px; line-height:1.5; color:#1E2A3A; flex-grow:1;">[Add a short quote here about the impact of working with Sophia — what changed, and what it meant for the business.]</p>
-        <div style="margin-top:22px; width:32px; height:2px; background:#C8A96B;"></div>
-        <div style="margin-top:14px; font-family:'Lato', sans-serif; font-weight:700; font-size:15px; color:#1E2A3A;">[Name]</div>
-        <div style="font-family:'Lato', sans-serif; font-weight:500; font-size:13px; color:rgba(30,42,58,0.6);">[Role, Organisation]</div>
-      </div>
-
-    </div>
-  </div>
-
   <!-- FAQ -->
   <div id="faq" class="px90" style="padding-top:72px; padding-bottom:80px; background:#1E2A3A;">
     <div class="reveal" style="text-align:center; margin-bottom:56px;">
@@ -784,7 +752,6 @@
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#how-we-work">How We Work</a>
-        <a href="#testimonials">Testimonials</a>
         <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
         <a href="./privacy-policy.html">Privacy</a>
