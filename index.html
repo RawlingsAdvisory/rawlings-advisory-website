@@ -151,12 +151,12 @@
 
     .parallax-shape { transition: transform 0.2s linear; }
 
-    .benefit-card { transition: transform 0.35s cubic-bezier(.2,.7,.2,1), box-shadow 0.35s ease, border-color 0.35s ease; }
-    .benefit-card:hover { transform: translateY(-6px); box-shadow: 0 18px 34px -20px rgba(30,42,58,0.22); border-color: #C8A96B; }
+    .benefit-card { transition: opacity 0.9s cubic-bezier(.2,.7,.2,1), transform 0.9s cubic-bezier(.2,.7,.2,1), translate 0.35s cubic-bezier(.2,.7,.2,1), box-shadow 0.35s ease, border-color 0.35s ease; }
+    .benefit-card:hover { translate: 0 -6px; box-shadow: 0 18px 34px -20px rgba(30,42,58,0.22); border-color: #C8A96B; }
     .benefit-icon { transition: transform 0.4s cubic-bezier(.34,1.56,.64,1); }
     .benefit-card:hover .benefit-icon { transform: scale(1.14); }
 
-    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-20%); } }
     .marquee-track { display: flex; width: max-content; animation: marquee 30s linear infinite; }
     .no-motion .marquee-track { animation: none; }
 
@@ -204,6 +204,8 @@
       #services { padding-top: 28px !important; }
       #sound-familiar { padding-top: 28px !important; }
       #how-we-work { padding-top: 28px !important; }
+      #testimonials { padding-top: 28px !important; }
+      .grid-testimonials { grid-template-columns: repeat(2, 1fr) !important; }
       #faq { padding-top: 48px !important; }
       #book-a-call { padding-top: 48px !important; }
       #contact { padding-top: 40px !important; }
@@ -224,6 +226,7 @@
       .nav-logo { height: 58px !important; }
       .site-nav { min-height: 76px !important; }
       .grid-benefits { grid-template-columns: 1fr !important; }
+      .grid-testimonials { grid-template-columns: 1fr !important; }
       .hero-ctas { flex-direction: column !important; align-items: stretch !important; }
       .hero-ctas a { text-align: center !important; }
       .grid-form-row { grid-template-columns: 1fr !important; }
@@ -253,11 +256,12 @@
   <!-- NAV (over hero, fixed + scroll-reactive) -->
   <div class="site-nav" style="position:fixed; top:0; left:0; right:0; z-index:100; padding:38px 90px;">
     <img src="./logo.png" alt="Rawlings Advisory" class="nav-logo" style="position:absolute; top:0; left:0; height:115px; width:auto; display:block;">
-    <div style="max-width:1320px; margin:0 auto; display:flex; align-items:center; justify-content:flex-end;">
+    <div style="display:flex; align-items:center; justify-content:flex-end;">
       <div class="nav-links-desktop" style="display:flex; gap:46px; font-family:'Lato', sans-serif; font-weight:500; font-size:15px; letter-spacing:0.02em; color:#F7F5F2;">
         <a href="#about" class="nav-link">About</a>
         <a href="#services" class="nav-link">Services</a>
         <a href="#how-we-work" class="nav-link">How We Work</a>
+        <a href="#testimonials" class="nav-link">Testimonials</a>
         <a href="#faq" class="nav-link">FAQ</a>
         <a href="#contact" class="nav-link">Contact</a>
       </div>
@@ -269,6 +273,7 @@
       <a href="#about" class="nav-mobile-link">About</a>
       <a href="#services" class="nav-mobile-link">Services</a>
       <a href="#how-we-work" class="nav-mobile-link">How We Work</a>
+      <a href="#testimonials" class="nav-mobile-link">Testimonials</a>
       <a href="#faq" class="nav-mobile-link">FAQ</a>
       <a href="#contact" class="nav-mobile-link">Contact</a>
     </div>
@@ -316,6 +321,42 @@
   <!-- MARQUEE -->
   <div style="padding:24px 0; background:#1E2A3A; overflow:hidden; border-top:1px solid rgba(247,245,242,0.12); border-bottom:1px solid rgba(247,245,242,0.12);">
     <div class="marquee-track">
+      <div style="display:flex; align-items:center; gap:20px; padding-right:20px; flex-shrink:0;">
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">NDIS Providers</span>
+        <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Aged Care Providers</span>
+        <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Disability Services</span>
+        <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Allied Health</span>
+        <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Equipment Suppliers</span>
+        <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:20px; padding-right:20px; flex-shrink:0;">
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">NDIS Providers</span>
+        <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Aged Care Providers</span>
+        <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Disability Services</span>
+        <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Allied Health</span>
+        <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Equipment Suppliers</span>
+        <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:20px; padding-right:20px; flex-shrink:0;">
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">NDIS Providers</span>
+        <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Aged Care Providers</span>
+        <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Disability Services</span>
+        <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Allied Health</span>
+        <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
+        <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">Equipment Suppliers</span>
+        <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
+      </div>
       <div style="display:flex; align-items:center; gap:20px; padding-right:20px; flex-shrink:0;">
         <span style="font-family:'Lato', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,245,242,0.72); white-space:nowrap;">NDIS Providers</span>
         <span style="color:#C8A96B; font-size:13px;">&#10022;</span>
@@ -481,8 +522,11 @@
       <h2 style="margin:16px 0 0; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:clamp(28px, 4.5vw, 40px); color:#1E2A3A;">How We Work Together</h2>
     </div>
 
-    <div class="hww-graphic reveal" style="max-width:1320px; margin:0 auto;">
-      <img src="./hww-process.png" alt="How We Work Together: 01 Let's Talk, 02 Get To Know the Business, 03 Work Out What Comes Next, 04 Ongoing Support" style="width:100%; height:auto; display:block;">
+    <div class="hww-graphic" style="max-width:1320px; margin:0 auto; display:grid; grid-template-columns: 700fr 648fr 653fr 699fr; align-items:start;">
+      <img class="reveal reveal-delay-1" src="./hww-strip-1.png" alt="Step 1: Let's Talk" style="width:100%; height:auto; display:block;">
+      <img class="reveal reveal-delay-2" src="./hww-strip-2.png" alt="Step 2: Get To Know the Business" style="width:100%; height:auto; display:block;">
+      <img class="reveal reveal-delay-3" src="./hww-strip-3.png" alt="Step 3: Work Out What Comes Next" style="width:100%; height:auto; display:block;">
+      <img class="reveal reveal-delay-4" src="./hww-strip-4.png" alt="Step 4: Ongoing Support" style="width:100%; height:auto; display:block;">
     </div>
 
     <div class="hww-coded" style="position:relative; max-width:1320px; margin:0 auto;">
@@ -540,6 +584,45 @@
         </div>
 
       </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div id="testimonials" class="px90" style="padding-top:72px; padding-bottom:80px; background:#F7F5F2;">
+    <div class="reveal" style="text-align:center; margin-bottom:56px;">
+      <div style="font-family:'Lato', sans-serif; font-weight:500; font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#C8A96B;">Testimonials</div>
+      <h2 style="margin:16px 0 0; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:clamp(28px, 4.5vw, 40px); color:#1E2A3A;">What Colleagues Say</h2>
+    </div>
+
+    <div class="grid-testimonials" style="max-width:1320px; margin:0 auto; display:grid; grid-template-columns:repeat(3, 1fr); gap:26px;">
+
+      <!-- Testimonial 1 -->
+      <div class="reveal reveal-delay-1" style="background:#F7F5F2; border:1.5px solid #C8A96B; border-radius:20px; padding:38px 32px; display:flex; flex-direction:column;">
+        <div style="font-family:'Cormorant Garamond', serif; font-weight:700; font-size:56px; line-height:0.5; color:#C8A96B; opacity:0.85;">&ldquo;</div>
+        <p style="margin:22px 0 0; font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:500; font-size:19px; line-height:1.5; color:#1E2A3A; flex-grow:1;">[Add a short quote here about the impact of working with Sophia — what changed, and what it meant for the business.]</p>
+        <div style="margin-top:22px; width:32px; height:2px; background:#C8A96B;"></div>
+        <div style="margin-top:14px; font-family:'Lato', sans-serif; font-weight:700; font-size:15px; color:#1E2A3A;">[Name]</div>
+        <div style="font-family:'Lato', sans-serif; font-weight:500; font-size:13px; color:rgba(30,42,58,0.6);">[Role, Organisation]</div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="reveal reveal-delay-2" style="background:#F7F5F2; border:1.5px solid #C8A96B; border-radius:20px; padding:38px 32px; display:flex; flex-direction:column;">
+        <div style="font-family:'Cormorant Garamond', serif; font-weight:700; font-size:56px; line-height:0.5; color:#C8A96B; opacity:0.85;">&ldquo;</div>
+        <p style="margin:22px 0 0; font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:500; font-size:19px; line-height:1.5; color:#1E2A3A; flex-grow:1;">[Add a short quote here about the impact of working with Sophia — what changed, and what it meant for the business.]</p>
+        <div style="margin-top:22px; width:32px; height:2px; background:#C8A96B;"></div>
+        <div style="margin-top:14px; font-family:'Lato', sans-serif; font-weight:700; font-size:15px; color:#1E2A3A;">[Name]</div>
+        <div style="font-family:'Lato', sans-serif; font-weight:500; font-size:13px; color:rgba(30,42,58,0.6);">[Role, Organisation]</div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="reveal reveal-delay-3" style="background:#F7F5F2; border:1.5px solid #C8A96B; border-radius:20px; padding:38px 32px; display:flex; flex-direction:column;">
+        <div style="font-family:'Cormorant Garamond', serif; font-weight:700; font-size:56px; line-height:0.5; color:#C8A96B; opacity:0.85;">&ldquo;</div>
+        <p style="margin:22px 0 0; font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:500; font-size:19px; line-height:1.5; color:#1E2A3A; flex-grow:1;">[Add a short quote here about the impact of working with Sophia — what changed, and what it meant for the business.]</p>
+        <div style="margin-top:22px; width:32px; height:2px; background:#C8A96B;"></div>
+        <div style="margin-top:14px; font-family:'Lato', sans-serif; font-weight:700; font-size:15px; color:#1E2A3A;">[Name]</div>
+        <div style="font-family:'Lato', sans-serif; font-weight:500; font-size:13px; color:rgba(30,42,58,0.6);">[Role, Organisation]</div>
+      </div>
+
     </div>
   </div>
 
@@ -701,6 +784,7 @@
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#how-we-work">How We Work</a>
+        <a href="#testimonials">Testimonials</a>
         <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
         <a href="./privacy-policy.html">Privacy</a>
