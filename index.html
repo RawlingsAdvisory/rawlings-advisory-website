@@ -209,9 +209,14 @@
       #contact { padding-top: 24px !important; }
     }
 
+    .hww-graphic { display: block; }
+    .hww-coded { display: none; }
+
     @media (max-width: 700px) {
       .grid-hww { grid-template-columns: 1fr !important; gap: 34px !important; }
       .hww-line, .hww-dot { display: none !important; }
+      .hww-graphic { display: none !important; }
+      .hww-coded { display: block !important; }
     }
 
     @media (max-width: 560px) {
@@ -476,7 +481,11 @@
       <h2 style="margin:16px 0 0; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:clamp(28px, 4.5vw, 40px); color:#1E2A3A;">How We Work Together</h2>
     </div>
 
-    <div style="position:relative; max-width:1320px; margin:0 auto;">
+    <div class="hww-graphic reveal" style="max-width:1320px; margin:0 auto;">
+      <img src="./hww-process.png" alt="How We Work Together: 01 Let's Talk, 02 Get To Know the Business, 03 Work Out What Comes Next, 04 Ongoing Support" style="width:100%; height:auto; display:block;">
+    </div>
+
+    <div class="hww-coded" style="position:relative; max-width:1320px; margin:0 auto;">
 
       <!-- connecting line + dots, behind the cards -->
       <div class="hww-line" style="position:absolute; top:123px; left:12.5%; right:12.5%; height:2px; background:#C8A96B; opacity:1; z-index:0;"></div>
