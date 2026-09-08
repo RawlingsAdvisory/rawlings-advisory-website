@@ -132,6 +132,12 @@
     .no-motion, .no-motion * { animation: none !important; transition: none !important; }
     .no-motion .reveal { opacity: 1 !important; transform: none !important; }
 
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+      .marquee-track { animation: none !important; }
+    }
+
     .nav-link { position: relative; padding-bottom: 4px; }
     .nav-link::after { content: ''; position: absolute; left: 50%; right: 50%; bottom: 0; height: 1px; background: currentColor; transition: left 0.28s ease, right 0.28s ease; }
     .nav-link:hover::after { left: 0; right: 0; }
@@ -256,7 +262,7 @@
   <div style="position:absolute; inset:0; pointer-events:none; z-index:50; filter:url(#grain); mix-blend-mode:overlay; opacity:0.5;"></div>
 
   <!-- NAV (over hero, fixed + scroll-reactive) -->
-  <div class="site-nav" style="position:fixed; top:0; left:0; right:0; z-index:100; padding:38px 90px;">
+  <nav class="site-nav" style="position:fixed; top:0; left:0; right:0; z-index:100; padding:38px 90px;">
     <img src="./logo.png" alt="Rawlings Advisory" class="nav-logo" style="position:absolute; top:0; left:0; height:115px; width:auto; display:block;">
     <div style="display:flex; align-items:center; justify-content:flex-end;">
       <div class="nav-links-desktop" style="display:flex; gap:46px; font-family:'Lato', sans-serif; font-weight:500; font-size:15px; letter-spacing:0.02em; color:#F7F5F2;">
@@ -277,8 +283,9 @@
       <a href="#faq" class="nav-mobile-link">FAQ</a>
       <a href="#contact" class="nav-mobile-link">Contact</a>
     </div>
-  </div>
+  </nav>
 
+  <main>
   <!-- HERO -->
   <div class="hero-parallax px90" style="position:relative; background:#1E2A3A; min-height:800px; padding-top:0; padding-bottom:0; display:flex; align-items:center;">
 
@@ -407,25 +414,25 @@
 
       <div class="benefit-card reveal reveal-delay-1" style="background:#F7F5F2; border:1px solid rgba(30,42,58,0.15); border-radius:6px; padding:32px 22px; text-align:center;">
         <svg aria-hidden="true" class="benefit-icon" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#C8A96B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto; display:block;"><path d="M3 17l6 -6l4 4l8 -8" /><path d="M14 7l7 0l0 7" /></svg>
-        <h3 style="margin:16px 0 0; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:19px; color:#1E2A3A;">Grow</h3>
+        <h2 style="margin:16px 0 0; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:19px; color:#1E2A3A;">Grow</h2>
         <div style="margin-top:8px; font-size:13.5px; line-height:1.55; color:rgba(30,42,58,0.68);">More qualified conversations, more consistently</div>
       </div>
 
       <div class="benefit-card reveal reveal-delay-2" style="background:#F7F5F2; border:1px solid rgba(30,42,58,0.15); border-radius:6px; padding:32px 22px; text-align:center;">
         <svg aria-hidden="true" class="benefit-icon" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#C8A96B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto; display:block;"><path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" /><path d="M12 6l-3.293 3.293a1 1 0 0 0 0 1.414l.543 .543c.69 .69 1.81 .69 2.5 0l1 -1a3.182 3.182 0 0 1 4.5 0l2.25 2.25" /><path d="M12.5 15.5l2 2" /><path d="M15 13l2 2" /></svg>
-        <h3 style="margin:16px 0 0; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:19px; color:#1E2A3A;">Retain</h3>
+        <h2 style="margin:16px 0 0; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:19px; color:#1E2A3A;">Retain</h2>
         <div style="margin-top:8px; font-size:13.5px; line-height:1.55; color:rgba(30,42,58,0.68);">Clients who stay longer and expand over time</div>
       </div>
 
       <div class="benefit-card reveal reveal-delay-3" style="background:#F7F5F2; border:1px solid rgba(30,42,58,0.15); border-radius:6px; padding:32px 22px; text-align:center;">
         <svg aria-hidden="true" class="benefit-icon" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#C8A96B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto; display:block;"><path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /></svg>
-        <h3 style="margin:16px 0 0; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:19px; color:#1E2A3A;">Be efficient</h3>
+        <h2 style="margin:16px 0 0; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:19px; color:#1E2A3A;">Be efficient</h2>
         <div style="margin-top:8px; font-size:13.5px; line-height:1.55; color:rgba(30,42,58,0.68);">Less time lost to manual work and dropped leads</div>
       </div>
 
       <div class="benefit-card reveal reveal-delay-4" style="background:#F7F5F2; border:1px solid rgba(30,42,58,0.15); border-radius:6px; padding:32px 22px; text-align:center;">
         <svg aria-hidden="true" class="benefit-icon" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#C8A96B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto; display:block;"><path d="M18 21v-14" /><path d="M9 15l3 -3l3 3" /><path d="M15 10l3 -3l3 3" /><path d="M3 21l18 0" /><path d="M12 21l0 -9" /><path d="M3 6l3 -3l3 3" /><path d="M6 21v-18" /></svg>
-        <h3 style="margin:16px 0 0; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:19px; color:#1E2A3A;">Work smarter</h3>
+        <h2 style="margin:16px 0 0; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:19px; color:#1E2A3A;">Work smarter</h2>
         <div style="margin-top:8px; font-size:13.5px; line-height:1.55; color:rgba(30,42,58,0.68);">Time and energy on the clients and deals that matter</div>
       </div>
 
@@ -535,10 +542,10 @@
     </div>
 
     <div class="hww-graphic" style="max-width:1320px; margin:0 auto; display:grid; grid-template-columns: 700fr 648fr 653fr 699fr; align-items:start;">
-      <img class="reveal reveal-delay-1" src="./hww-strip-1.png" alt="Step 1: Let's Talk" style="width:100%; height:auto; display:block;">
-      <img class="reveal reveal-delay-2" src="./hww-strip-2.png" alt="Step 2: Get To Know the Business" style="width:100%; height:auto; display:block;">
-      <img class="reveal reveal-delay-3" src="./hww-strip-3.png" alt="Step 3: Work Out What Comes Next" style="width:100%; height:auto; display:block;">
-      <img class="reveal reveal-delay-4" src="./hww-strip-4.png" alt="Step 4: Ongoing Support" style="width:100%; height:auto; display:block;">
+      <img class="reveal reveal-delay-1" src="./hww-strip-1.png" alt="Step 1, Let's Talk: A conversation about your business: what's working, what's not, and whether I can help." style="width:100%; height:auto; display:block;">
+      <img class="reveal reveal-delay-2" src="./hww-strip-2.png" alt="Step 2, Get To Know the Business: If we move forward, I'll get a proper understanding of how things work today: the people, processes, and experience behind the scenes." style="width:100%; height:auto; display:block;">
+      <img class="reveal reveal-delay-3" src="./hww-strip-3.png" alt="Step 3, Work Out What Comes Next: We'll agree where I can be most useful: a specific project, support within one challenge, or something more ongoing." style="width:100%; height:auto; display:block;">
+      <img class="reveal reveal-delay-4" src="./hww-strip-4.png" alt="Step 4, Ongoing Support: Hands-on support, on an ongoing basis. Embedded in your team, in sales, client experience, or operations, for as long as you need." style="width:100%; height:auto; display:block;">
     </div>
 
     <div class="hww-coded" style="position:relative; max-width:1320px; margin:0 auto;">
@@ -722,21 +729,21 @@
         <form id="contact-form" action="https://formspree.io/f/xnpqzyvq" method="POST" style="display:flex; flex-direction:column; gap:22px;">
           <div class="grid-form-row" style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
             <div>
-              <label style="display:block; font-family:'Lato', sans-serif; font-weight:600; font-size:13px; color:#1E2A3A; margin-bottom:7px;">Name</label>
-              <input class="contact-field" type="text" name="name" autocomplete="name" required>
+              <label for="contact-name" style="display:block; font-family:'Lato', sans-serif; font-weight:600; font-size:13px; color:#1E2A3A; margin-bottom:7px;">Name</label>
+              <input id="contact-name" class="contact-field" type="text" name="name" autocomplete="name" required>
             </div>
             <div>
-              <label style="display:block; font-family:'Lato', sans-serif; font-weight:600; font-size:13px; color:#1E2A3A; margin-bottom:7px;">Email</label>
-              <input class="contact-field" type="email" name="email" autocomplete="email" required>
+              <label for="contact-email" style="display:block; font-family:'Lato', sans-serif; font-weight:600; font-size:13px; color:#1E2A3A; margin-bottom:7px;">Email</label>
+              <input id="contact-email" class="contact-field" type="email" name="email" autocomplete="email" required>
             </div>
           </div>
           <div>
-            <label style="display:block; font-family:'Lato', sans-serif; font-weight:600; font-size:13px; color:#1E2A3A; margin-bottom:7px;">Organisation</label>
-            <input class="contact-field" type="text" name="organisation" autocomplete="organization">
+            <label for="contact-org" style="display:block; font-family:'Lato', sans-serif; font-weight:600; font-size:13px; color:#1E2A3A; margin-bottom:7px;">Organisation</label>
+            <input id="contact-org" class="contact-field" type="text" name="organisation" autocomplete="organization">
           </div>
           <div>
-            <label style="display:block; font-family:'Lato', sans-serif; font-weight:600; font-size:13px; color:#1E2A3A; margin-bottom:7px;">Message</label>
-            <textarea class="contact-field" name="message" rows="3" required></textarea>
+            <label for="contact-message" style="display:block; font-family:'Lato', sans-serif; font-weight:600; font-size:13px; color:#1E2A3A; margin-bottom:7px;">Message</label>
+            <textarea id="contact-message" class="contact-field" name="message" rows="3" required></textarea>
           </div>
           <div style="margin-top:6px; display:flex; align-items:center; gap:18px; flex-wrap:wrap;">
             <button type="submit" class="btn-fill" style="display:inline-block; padding:15px 34px; background:#C8A96B; border:none; outline:none; border-radius:2px; font-family:'Lato', sans-serif; font-weight:700; font-size:14px; letter-spacing:0.03em; color:#1E2A3A; cursor:pointer;">Send Message</button>
@@ -748,8 +755,10 @@
     </div>
   </div>
 
+  </main>
+
   <!-- FOOTER -->
-  <div class="px90" style="padding-top:36px; padding-bottom:36px; background:#1E2A3A; color:rgba(247,245,242,0.72); font-size:13px;">
+  <footer class="px90" style="padding-top:36px; padding-bottom:36px; background:#1E2A3A; color:rgba(247,245,242,0.72); font-size:13px;">
     <div class="footer-inner" style="max-width:1320px; margin:0 auto; display:flex; align-items:center; justify-content:space-between;">
       <div>© Rawlings Advisory</div>
       <div class="footer-links" style="display:flex; gap:32px;">
@@ -761,12 +770,13 @@
         <a href="./privacy-policy.html">Privacy</a>
       </div>
     </div>
-  </div>
+  </footer>
 
 </div>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  var motionOn = true;
+  var motionOn = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!motionOn) { document.body.classList.add("no-motion"); }
   var els = document.querySelectorAll(".reveal");
   if (!("IntersectionObserver" in window) || els.length === 0) {
     els.forEach(function (el) { el.classList.add("is-visible"); });
