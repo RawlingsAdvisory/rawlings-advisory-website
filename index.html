@@ -137,8 +137,9 @@
       .reveal { opacity: 1 !important; transform: none !important; }
       .svc-icon { opacity: 1 !important; transform: none !important; }
       .hww-card-icon { opacity: 1 !important; transform: none !important; }
-      .hww-line { transform: none !important; }
-      .hww-dot { opacity: 1 !important; transform: none !important; }
+      .hww-wave-path { stroke-dashoffset: 0 !important; }
+      .hww-wave-dot { opacity: 1 !important; transform: none !important; }
+      .hww-wave-tick { opacity: 1 !important; transform: none !important; }
       .marquee-track { animation: none !important; }
     }
 
@@ -165,6 +166,8 @@
     .svc-stagger-4.is-visible, .svc-stagger-4.is-visible .svc-icon { transition-delay: 0.45s; }
 
     /* How We Work — step-by-step reveal */
+    .hww-step-card { transition: translate 0.35s cubic-bezier(.2,.7,.2,1), box-shadow 0.35s ease; }
+    .hww-step-card:hover { translate: 0 -6px; box-shadow: 0 20px 36px -20px rgba(30,42,58,0.24); }
     .hww-card-icon { transition: transform 0.5s cubic-bezier(.34,1.56,.64,1), opacity 0.4s ease; }
     .reveal .hww-card-icon { opacity: 0; transform: scale(0.4); }
     .reveal.is-visible .hww-card-icon { opacity: 1; transform: scale(1); }
@@ -175,16 +178,20 @@
     .hww-stagger-3.is-visible, .hww-stagger-3.is-visible .hww-card-icon { transition-delay: 0.4s; }
     .hww-stagger-4.is-visible, .hww-stagger-4.is-visible .hww-card-icon { transition-delay: 0.6s; }
 
-    .hww-line.reveal { opacity: 1; transform-origin: left; transform: scaleX(0); transition: transform 1s cubic-bezier(.65,0,.35,1); transition-delay: 0.15s; }
-    .hww-line.reveal.is-visible { transform: scaleX(1); }
+    .hww-offset-down.reveal.is-visible { transform: translateY(32px); }
 
-    .hww-dot.reveal { opacity: 0; transform: scale(0); transition: transform 0.4s cubic-bezier(.34,1.56,.64,1), opacity 0.3s ease; }
-    .hww-dot.reveal.is-visible { opacity: 1; transform: scale(1); }
+    .hww-wave-path.reveal { opacity: 1; stroke-dasharray: 1400; stroke-dashoffset: 1400; transition: stroke-dashoffset 1.3s cubic-bezier(.65,0,.35,1); transition-delay: 0.15s; }
+    .hww-wave-path.reveal.is-visible { stroke-dashoffset: 0; }
+    .no-motion .hww-wave-path { stroke-dashoffset: 0 !important; }
+
+    .hww-wave-dot.reveal { opacity: 0; transform-origin: center; transform: scale(0); transition: transform 0.4s cubic-bezier(.34,1.56,.64,1), opacity 0.3s ease; }
+    .hww-wave-dot.reveal.is-visible { opacity: 1; transform: scale(1); }
+    .hww-wave-tick.reveal { opacity: 0; transform-origin: top; transform: scaleY(0); transition: transform 0.35s cubic-bezier(.2,.7,.2,1), opacity 0.25s ease; }
+    .hww-wave-tick.reveal.is-visible { opacity: 1; transform: scaleY(1); }
     .hww-dot-1.is-visible { transition-delay: 0.25s; }
     .hww-dot-2.is-visible { transition-delay: 0.45s; }
     .hww-dot-3.is-visible { transition-delay: 0.65s; }
-
-    .no-motion .hww-line, .no-motion .hww-dot { opacity: 1 !important; transform: none !important; }
+    .hww-dot-4.is-visible { transition-delay: 0.85s; }
 
     .site-nav { transition: background 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease; background: transparent; min-height: 122px; box-sizing: border-box; }
     .site-nav.nav-scrolled { background: rgba(30,42,58,0.97); box-shadow: 0 8px 24px rgba(30,42,58,0.18); padding-top: 22px !important; padding-bottom: 22px !important; }
@@ -256,8 +263,10 @@
     }
 
     @media (max-width: 700px) {
-      .grid-hww { grid-template-columns: 1fr !important; gap: 34px !important; }
-      .hww-line, .hww-dot { display: none !important; }
+      .hww-wave-wrap { padding-top: 0 !important; }
+      .grid-hww { grid-template-columns: 1fr !important; gap: 34px !important; padding-bottom: 0 !important; }
+      .hww-wave-svg { display: none !important; }
+      .hww-offset-down.is-visible { transform: none !important; }
     }
 
     @media (max-width: 560px) {
@@ -576,18 +585,25 @@
       <h2 style="margin:16px 0 0; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:clamp(28px, 4.5vw, 40px); color:#1E2A3A;">How We Work Together</h2>
     </div>
 
-    <div style="position:relative; max-width:1320px; margin:0 auto;">
+    <div class="hww-wave-wrap" style="position:relative; max-width:1320px; margin:0 auto; padding-top:84px;">
 
-      <!-- connecting line + dots, behind the cards -->
-      <div class="hww-line reveal" style="position:absolute; top:123px; left:12.5%; right:12.5%; height:2px; background:#C8A96B; z-index:0;"></div>
-      <div class="hww-dot reveal hww-dot-1" style="position:absolute; top:120px; left:24.7%; width:8px; height:8px; border-radius:50%; background:#C8A96B; z-index:1;"></div>
-      <div class="hww-dot reveal hww-dot-2" style="position:absolute; top:120px; left:49.7%; width:8px; height:8px; border-radius:50%; background:#C8A96B; z-index:1;"></div>
-      <div class="hww-dot reveal hww-dot-3" style="position:absolute; top:120px; left:74.7%; width:8px; height:8px; border-radius:50%; background:#C8A96B; z-index:1;"></div>
+      <!-- floating wave path + drop-ticks, fully above the cards so nothing hides it -->
+      <svg class="hww-wave-svg" aria-hidden="true" viewBox="0 0 1320 84" preserveAspectRatio="none" style="position:absolute; top:0; left:0; width:100%; height:84px;">
+        <path class="hww-wave-path reveal" d="M155,22 C 270,22 380,54 492,54 C 605,54 715,22 828,22 C 940,22 1050,54 1165,54" fill="none" stroke="#C8A96B" stroke-width="2.5" stroke-linecap="round"></path>
+        <line class="hww-wave-tick reveal hww-dot-1" x1="155" y1="22" x2="155" y2="84" stroke="#C8A96B" stroke-width="1.5" stroke-dasharray="3 4"></line>
+        <line class="hww-wave-tick reveal hww-dot-2" x1="492" y1="54" x2="492" y2="84" stroke="#C8A96B" stroke-width="1.5" stroke-dasharray="3 4"></line>
+        <line class="hww-wave-tick reveal hww-dot-3" x1="828" y1="22" x2="828" y2="84" stroke="#C8A96B" stroke-width="1.5" stroke-dasharray="3 4"></line>
+        <line class="hww-wave-tick reveal hww-dot-4" x1="1165" y1="54" x2="1165" y2="84" stroke="#C8A96B" stroke-width="1.5" stroke-dasharray="3 4"></line>
+        <circle class="hww-wave-dot reveal hww-dot-1" cx="155" cy="22" r="6" fill="#C8A96B"></circle>
+        <circle class="hww-wave-dot reveal hww-dot-2" cx="492" cy="54" r="6" fill="#C8A96B"></circle>
+        <circle class="hww-wave-dot reveal hww-dot-3" cx="828" cy="22" r="6" fill="#C8A96B"></circle>
+        <circle class="hww-wave-dot reveal hww-dot-4" cx="1165" cy="54" r="6" fill="#C8A96B"></circle>
+      </svg>
 
-      <div class="grid-hww" style="position:relative; z-index:2; display:grid; grid-template-columns:repeat(4, 1fr); gap:26px;">
+      <div class="grid-hww" style="position:relative; z-index:2; display:grid; grid-template-columns:repeat(4, 1fr); gap:26px; padding-bottom:32px;">
 
         <!-- Stop 1: Let's Talk -->
-        <div class="reveal hww-stagger-1" style="background:#F7F5F2; border:1.5px solid #C8A96B; border-radius:20px; padding:38px 26px;">
+        <div class="reveal hww-stagger-1 hww-step-card" style="background:#F7F5F2; border-radius:14px; box-shadow:0 10px 24px -16px rgba(30,42,58,0.18); padding:38px 26px;">
           <div class="hww-card-icon" style="width:140px; height:140px; margin:0 auto;">
             <img src="./hww-icon-1.png" alt="Let's Talk" style="width:100%; height:100%; object-fit:contain; display:block;">
           </div>
@@ -598,7 +614,7 @@
         </div>
 
         <!-- Stop 2: Get To Know the Business -->
-        <div class="reveal hww-stagger-2" style="background:#F7F5F2; border:1.5px solid #C8A96B; border-radius:20px; padding:38px 26px;">
+        <div class="reveal hww-stagger-2 hww-step-card hww-offset-down" style="background:#F7F5F2; border-radius:14px; box-shadow:0 10px 24px -16px rgba(30,42,58,0.18); padding:38px 26px;">
           <div class="hww-card-icon" style="width:140px; height:140px; margin:0 auto;">
             <img src="./hww-icon-2.png" alt="Get To Know the Business" style="width:100%; height:100%; object-fit:contain; display:block;">
           </div>
@@ -609,7 +625,7 @@
         </div>
 
         <!-- Stop 3: Work Out What Comes Next -->
-        <div class="reveal hww-stagger-3" style="background:#F7F5F2; border:1.5px solid #C8A96B; border-radius:20px; padding:38px 26px;">
+        <div class="reveal hww-stagger-3 hww-step-card" style="background:#F7F5F2; border-radius:14px; box-shadow:0 10px 24px -16px rgba(30,42,58,0.18); padding:38px 26px;">
           <div class="hww-card-icon" style="width:140px; height:140px; margin:0 auto;">
             <img src="./hww-icon-3.png" alt="Work Out What Comes Next" style="width:100%; height:100%; object-fit:contain; display:block;">
           </div>
@@ -620,7 +636,7 @@
         </div>
 
         <!-- Stop 4: Ongoing Support -->
-        <div class="reveal hww-stagger-4" style="background:#F7F5F2; border:1.5px solid #C8A96B; border-radius:20px; padding:38px 26px;">
+        <div class="reveal hww-stagger-4 hww-step-card hww-offset-down" style="background:#F7F5F2; border-radius:14px; box-shadow:0 10px 24px -16px rgba(30,42,58,0.18); padding:38px 26px;">
           <div class="hww-card-icon" style="width:140px; height:140px; margin:0 auto;">
             <img src="./hww-icon-4.png" alt="Ongoing Support" style="width:100%; height:100%; object-fit:contain; display:block;">
           </div>
