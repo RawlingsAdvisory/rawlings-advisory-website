@@ -162,18 +162,6 @@
     .svc-pillar { transition: opacity 0.9s cubic-bezier(.2,.7,.2,1), transform 0.9s cubic-bezier(.2,.7,.2,1), translate 0.35s cubic-bezier(.2,.7,.2,1), box-shadow 0.35s ease; }
     .svc-pillar:hover { translate: 0 -6px; box-shadow: 0 20px 36px -20px rgba(30,42,58,0.2); }
 
-    .pillar-toggle-item { border-top: 1px solid rgba(30,42,58,0.14); padding-top: 14px; }
-    .pillar-toggle-q { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; background: none; border: none; cursor: pointer; font-family: 'Lato', sans-serif; font-weight: 600; font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase; color: #7E642F; padding: 4px; }
-    .pillar-toggle-q:hover { color: #1E2A3A; }
-    .pillar-toggle-icon { position: relative; flex-shrink: 0; width: 13px; height: 13px; }
-    .pillar-toggle-icon::before, .pillar-toggle-icon::after { content: ''; position: absolute; background: #C8A96B; transition: transform 0.3s ease; }
-    .pillar-toggle-icon::before { top: 50%; left: 0; width: 100%; height: 1.5px; transform: translateY(-50%); }
-    .pillar-toggle-icon::after { left: 50%; top: 0; width: 1.5px; height: 100%; transform: translateX(-50%); }
-    .pillar-toggle-item.open .pillar-toggle-icon::after { transform: translateX(-50%) rotate(90deg); }
-    .pillar-toggle-wrap { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.35s ease; }
-    .pillar-toggle-item.open .pillar-toggle-wrap { grid-template-rows: 1fr; }
-    .pillar-toggle-inner { overflow: hidden; }
-
     .site-nav { transition: background 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease; background: transparent; min-height: 122px; box-sizing: border-box; }
     .site-nav.nav-scrolled { background: rgba(30,42,58,0.97); box-shadow: 0 8px 24px rgba(30,42,58,0.18); padding-top: 22px !important; padding-bottom: 22px !important; }
 
@@ -427,19 +415,6 @@
         <h3 style="margin:20px 0 0; text-align:center; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:20px; color:#1E2A3A;">Client Intake</h3>
         <div style="margin:10px auto 0; width:28px; height:2px; background:#C8A96B;"></div>
         <div style="margin-top:14px; font-size:14px; line-height:1.6; color:rgba(30,42,58,0.68); text-align:center;">Enquiries handled well, and a strong first impression from the very first contact.</div>
-        <div class="pillar-toggle-item" style="margin-top:18px; flex-grow:1; display:flex; flex-direction:column; justify-content:flex-end;">
-          <button class="pillar-toggle-q" type="button" aria-expanded="false" aria-controls="pillar-services-1">
-            Services
-            <span class="pillar-toggle-icon" aria-hidden="true"></span>
-          </button>
-          <div class="pillar-toggle-wrap" id="pillar-services-1">
-            <div class="pillar-toggle-inner">
-              <ul class="pillar-services" style="margin:14px 0 0; padding:0; list-style:none; font-size:13.5px; line-height:1.85; color:rgba(30,42,58,0.7); text-align:center;">
-                <li style="font-style:italic; color:rgba(30,42,58,0.4);">Services list coming soon</li>
-              </ul>
-            </div>
-          </div>
-        </div>
       </div>
 
       <div class="reveal svc-stagger-2 svc-pillar" style="display:flex; flex-direction:column; border:1.5px solid #C8A96B; border-radius:20px; background:#F7F5F2; padding:34px 22px;">
@@ -449,19 +424,6 @@
         <h3 style="margin:20px 0 0; text-align:center; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:20px; color:#1E2A3A;">Client Experience</h3>
         <div style="margin:10px auto 0; width:28px; height:2px; background:#C8A96B;"></div>
         <div style="margin-top:14px; font-size:14px; line-height:1.6; color:rgba(30,42,58,0.68); text-align:center;">The moments that shape how clients, families and partners feel.</div>
-        <div class="pillar-toggle-item" style="margin-top:18px; flex-grow:1; display:flex; flex-direction:column; justify-content:flex-end;">
-          <button class="pillar-toggle-q" type="button" aria-expanded="false" aria-controls="pillar-services-2">
-            Services
-            <span class="pillar-toggle-icon" aria-hidden="true"></span>
-          </button>
-          <div class="pillar-toggle-wrap" id="pillar-services-2">
-            <div class="pillar-toggle-inner">
-              <ul class="pillar-services" style="margin:14px 0 0; padding:0; list-style:none; font-size:13.5px; line-height:1.85; color:rgba(30,42,58,0.7); text-align:center;">
-                <li style="font-style:italic; color:rgba(30,42,58,0.4);">Services list coming soon</li>
-              </ul>
-            </div>
-          </div>
-        </div>
       </div>
 
       <div class="reveal svc-stagger-3 svc-pillar" style="display:flex; flex-direction:column; border:1.5px solid #C8A96B; border-radius:20px; background:#F7F5F2; padding:34px 22px;">
@@ -471,19 +433,6 @@
         <h3 style="margin:20px 0 0; text-align:center; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:20px; color:#1E2A3A;">Operations &amp; Leadership</h3>
         <div style="margin:10px auto 0; width:28px; height:2px; background:#C8A96B;"></div>
         <div style="margin-top:14px; font-size:14px; line-height:1.6; color:rgba(30,42,58,0.68); text-align:center;">Clearer structures, stronger processes and leadership that sticks.</div>
-        <div class="pillar-toggle-item" style="margin-top:18px; flex-grow:1; display:flex; flex-direction:column; justify-content:flex-end;">
-          <button class="pillar-toggle-q" type="button" aria-expanded="false" aria-controls="pillar-services-3">
-            Services
-            <span class="pillar-toggle-icon" aria-hidden="true"></span>
-          </button>
-          <div class="pillar-toggle-wrap" id="pillar-services-3">
-            <div class="pillar-toggle-inner">
-              <ul class="pillar-services" style="margin:14px 0 0; padding:0; list-style:none; font-size:13.5px; line-height:1.85; color:rgba(30,42,58,0.7); text-align:center;">
-                <li style="font-style:italic; color:rgba(30,42,58,0.4);">Services list coming soon</li>
-              </ul>
-            </div>
-          </div>
-        </div>
       </div>
 
       <div class="reveal svc-stagger-4 svc-pillar" style="display:flex; flex-direction:column; border:1.5px solid #C8A96B; border-radius:20px; background:#F7F5F2; padding:34px 22px;">
@@ -493,19 +442,6 @@
         <h3 style="margin:20px 0 0; text-align:center; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:20px; color:#1E2A3A;">Systems &amp; Process</h3>
         <div style="margin:10px auto 0; width:28px; height:2px; background:#C8A96B;"></div>
         <div style="margin-top:14px; font-size:14px; line-height:1.6; color:rgba(30,42,58,0.68); text-align:center;">Work that's simpler, faster and easier on the people doing it.</div>
-        <div class="pillar-toggle-item" style="margin-top:18px; flex-grow:1; display:flex; flex-direction:column; justify-content:flex-end;">
-          <button class="pillar-toggle-q" type="button" aria-expanded="false" aria-controls="pillar-services-4">
-            Services
-            <span class="pillar-toggle-icon" aria-hidden="true"></span>
-          </button>
-          <div class="pillar-toggle-wrap" id="pillar-services-4">
-            <div class="pillar-toggle-inner">
-              <ul class="pillar-services" style="margin:14px 0 0; padding:0; list-style:none; font-size:13.5px; line-height:1.85; color:rgba(30,42,58,0.7); text-align:center;">
-                <li style="font-style:italic; color:rgba(30,42,58,0.4);">Services list coming soon</li>
-              </ul>
-            </div>
-          </div>
-        </div>
       </div>
 
       <div class="reveal svc-stagger-5 svc-pillar" style="display:flex; flex-direction:column; border:1.5px solid #C8A96B; border-radius:20px; background:#F7F5F2; padding:34px 22px;">
@@ -519,19 +455,6 @@
         <h3 style="margin:20px 0 0; text-align:center; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:20px; color:#1E2A3A;">Training &amp; Workshops</h3>
         <div style="margin:10px auto 0; width:28px; height:2px; background:#C8A96B;"></div>
         <div style="margin-top:14px; font-size:14px; line-height:1.6; color:rgba(30,42,58,0.68); text-align:center;">Building the skills and confidence your team needs to deliver consistently, long after I've stepped back.</div>
-        <div class="pillar-toggle-item" style="margin-top:18px; flex-grow:1; display:flex; flex-direction:column; justify-content:flex-end;">
-          <button class="pillar-toggle-q" type="button" aria-expanded="false" aria-controls="pillar-services-5">
-            Services
-            <span class="pillar-toggle-icon" aria-hidden="true"></span>
-          </button>
-          <div class="pillar-toggle-wrap" id="pillar-services-5">
-            <div class="pillar-toggle-inner">
-              <ul class="pillar-services" style="margin:14px 0 0; padding:0; list-style:none; font-size:13.5px; line-height:1.85; color:rgba(30,42,58,0.7); text-align:center;">
-                <li style="font-style:italic; color:rgba(30,42,58,0.4);">Services list coming soon</li>
-              </ul>
-            </div>
-          </div>
-        </div>
       </div>
 
     </div>
@@ -1237,16 +1160,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // FAQ accordion
   document.querySelectorAll(".faq-item").forEach(function (item) {
     var btn = item.querySelector(".faq-q");
-    if (!btn) return;
-    btn.addEventListener("click", function () {
-      var isOpen = item.classList.toggle("open");
-      btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    });
-  });
-
-  // Pillar services accordion
-  document.querySelectorAll(".pillar-toggle-item").forEach(function (item) {
-    var btn = item.querySelector(".pillar-toggle-q");
     if (!btn) return;
     btn.addEventListener("click", function () {
       var isOpen = item.classList.toggle("open");
