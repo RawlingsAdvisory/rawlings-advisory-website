@@ -134,9 +134,6 @@
       *, *::before, *::after { animation: none !important; transition: none !important; }
       .reveal { opacity: 1 !important; transform: none !important; }
       .svc-icon { opacity: 1 !important; transform: none !important; }
-      .hww-wave-path { stroke-dashoffset: 0 !important; }
-      .hww-wave-dot { opacity: 1 !important; transform: none !important; }
-      .hww-wave-tick { opacity: 1 !important; transform: none !important; }
     }
 
     .nav-link { position: relative; padding-bottom: 4px; }
@@ -176,30 +173,6 @@
     .pillar-toggle-wrap { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.35s ease; }
     .pillar-toggle-item.open .pillar-toggle-wrap { grid-template-rows: 1fr; }
     .pillar-toggle-inner { overflow: hidden; }
-
-    /* How We Work — step-by-step reveal */
-    .hww-step-card { transition: opacity 0.9s cubic-bezier(.2,.7,.2,1), transform 0.9s cubic-bezier(.2,.7,.2,1), translate 0.35s cubic-bezier(.2,.7,.2,1), box-shadow 0.35s ease; }
-    .hww-step-card:hover { translate: 0 -6px; box-shadow: 0 20px 36px -20px rgba(30,42,58,0.24); }
-
-    .hww-stagger-1.is-visible { transition-delay: 0.35s; }
-    .hww-stagger-2.is-visible { transition-delay: 0.55s; }
-    .hww-stagger-3.is-visible { transition-delay: 0.75s; }
-    .hww-stagger-4.is-visible { transition-delay: 0.95s; }
-
-    .hww-offset-down.reveal.is-visible { transform: translateY(32px); }
-
-    .hww-wave-path.reveal { opacity: 1; stroke-dasharray: 1400; stroke-dashoffset: 1400; transition: stroke-dashoffset 1.3s cubic-bezier(.65,0,.35,1); transition-delay: 0.15s; }
-    .hww-wave-path.reveal.is-visible { stroke-dashoffset: 0; }
-    .no-motion .hww-wave-path { stroke-dashoffset: 0 !important; }
-
-    .hww-wave-dot.reveal { opacity: 0; transform-origin: center; transform: scale(0); transition: transform 0.4s cubic-bezier(.34,1.56,.64,1), opacity 0.3s ease; }
-    .hww-wave-dot.reveal.is-visible { opacity: 1; transform: scale(1); }
-    .hww-wave-tick.reveal { opacity: 0; transform-origin: top; transform: scaleY(0); transition: transform 0.35s cubic-bezier(.2,.7,.2,1), opacity 0.25s ease; }
-    .hww-wave-tick.reveal.is-visible { opacity: 1; transform: scaleY(1); }
-    .hww-dot-1.is-visible { transition-delay: 0.25s; }
-    .hww-dot-2.is-visible { transition-delay: 0.45s; }
-    .hww-dot-3.is-visible { transition-delay: 0.65s; }
-    .hww-dot-4.is-visible { transition-delay: 0.85s; }
 
     .site-nav { transition: background 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease; background: transparent; min-height: 122px; box-sizing: border-box; }
     .site-nav.nav-scrolled { background: rgba(30,42,58,0.97); box-shadow: 0 8px 24px rgba(30,42,58,0.18); padding-top: 22px !important; padding-bottom: 22px !important; }
@@ -271,13 +244,6 @@
       #faq { padding-top: 48px !important; }
       #book-a-call { padding-top: 48px !important; }
       #contact { padding-top: 40px !important; }
-    }
-
-    @media (max-width: 700px) {
-      .hww-wave-wrap { padding-top: 0 !important; }
-      .grid-hww { grid-template-columns: 1fr !important; gap: 34px !important; padding-bottom: 0 !important; }
-      .hww-wave-svg { display: none !important; }
-      .hww-offset-down.is-visible { transform: none !important; }
     }
 
     @media (max-width: 560px) {
@@ -586,63 +552,366 @@
   </div>
 
   <!-- HOW WE WORK TOGETHER -->
-  <div id="how-we-work" class="px90" style="padding-top:40px; padding-bottom:56px; background:#F7F5F2;">
-    <div class="reveal" style="text-align:center; margin-bottom:56px;">
-      <div style="font-family:'Lato', sans-serif; font-weight:500; font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#7E642F;">The Process</div>
-      <h2 style="margin:16px 0 0; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:clamp(28px, 4.5vw, 40px); color:#1E2A3A;">How We Work Together</h2>
-    </div>
+  <div id="how-we-work">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Lato:wght@400;700&display=swap");
 
-    <div class="hww-wave-wrap" style="position:relative; max-width:1320px; margin:0 auto; padding-top:84px;">
+    #rawlings-road {
+      --gold: #b98516;
+      --ink: #202b3a;
+      --paper: #f8f6f3;
+      background: var(--paper);
+      color: var(--ink);
+      padding: 36px 28px;
+      font-family: "Lato", sans-serif;
+    }
 
-      <!-- floating wave path + drop-ticks, fully above the cards so nothing hides it -->
-      <svg class="hww-wave-svg" aria-hidden="true" viewBox="0 0 1320 84" preserveAspectRatio="none" style="position:absolute; top:0; left:0; width:100%; height:84px;">
-        <path class="hww-wave-path reveal" d="M155,22 C 270,22 380,54 492,54 C 605,54 715,22 828,22 C 940,22 1050,54 1165,54" fill="none" stroke="#C8A96B" stroke-width="2.5" stroke-linecap="round"></path>
-        <line class="hww-wave-tick reveal hww-dot-1" x1="155" y1="22" x2="155" y2="84" stroke="#C8A96B" stroke-width="1.5" stroke-dasharray="3 4"></line>
-        <line class="hww-wave-tick reveal hww-dot-2" x1="492" y1="54" x2="492" y2="84" stroke="#C8A96B" stroke-width="1.5" stroke-dasharray="3 4"></line>
-        <line class="hww-wave-tick reveal hww-dot-3" x1="828" y1="22" x2="828" y2="84" stroke="#C8A96B" stroke-width="1.5" stroke-dasharray="3 4"></line>
-        <line class="hww-wave-tick reveal hww-dot-4" x1="1165" y1="54" x2="1165" y2="84" stroke="#C8A96B" stroke-width="1.5" stroke-dasharray="3 4"></line>
-        <circle class="hww-wave-dot reveal hww-dot-1" cx="155" cy="22" r="6" fill="#C8A96B"></circle>
-        <circle class="hww-wave-dot reveal hww-dot-2" cx="492" cy="54" r="6" fill="#C8A96B"></circle>
-        <circle class="hww-wave-dot reveal hww-dot-3" cx="828" cy="22" r="6" fill="#C8A96B"></circle>
-        <circle class="hww-wave-dot reveal hww-dot-4" cx="1165" cy="54" r="6" fill="#C8A96B"></circle>
+    #rawlings-road,
+    #rawlings-road * {
+      box-sizing: border-box;
+    }
+
+    #rawlings-road h2 {
+      margin: 0 0 32px;
+      text-align: center;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 34px;
+      font-weight: 500;
+      line-height: 1.15;
+    }
+
+    #rawlings-road .journey {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    #rawlings-road svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      pointer-events: none;
+    }
+
+    #rawlings-road .route,
+    #rawlings-road .route-base {
+      fill: none;
+      stroke: var(--gold);
+      stroke-width: 3;
+      stroke-linecap: round;
+    }
+
+    #rawlings-road .route-base {
+      stroke-opacity: 0.16;
+    }
+
+    #rawlings-road article {
+      position: relative;
+      display: flex;
+      align-items: center;
+      min-height: 182px;
+    }
+
+    #rawlings-road article:nth-of-type(even) {
+      justify-content: flex-end;
+    }
+
+    #rawlings-road .copy {
+      width: 39%;
+      padding: 16px 0;
+      transition: opacity 0.65s, transform 0.65s;
+    }
+
+    #rawlings-road.is-animated article:not(.visible) .copy {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+
+    #rawlings-road .number {
+      display: block;
+      margin-bottom: 9px;
+      color: var(--gold);
+      font-size: 23px;
+    }
+
+    #rawlings-road h3 {
+      margin: 0 0 12px;
+      font-family: "Lato", sans-serif;
+      font-size: 25px;
+      font-weight: 700;
+      line-height: 1.15;
+    }
+
+    #rawlings-road p {
+      margin: 0;
+      font-family: "Lato", sans-serif;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    #rawlings-road circle {
+      fill: var(--paper);
+      stroke: var(--gold);
+      stroke-width: 2;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    #rawlings-road circle.arrived {
+      opacity: 1;
+    }
+
+    #rawlings-road.is-mobile article {
+      justify-content: flex-end;
+      min-height: 185px;
+    }
+
+    #rawlings-road.is-mobile .copy {
+      width: 80%;
+    }
+
+    @media (max-width: 480px) {
+      #rawlings-road {
+        padding: 28px 20px;
+      }
+
+      #rawlings-road h2 {
+        font-size: 29px;
+        margin-bottom: 26px;
+      }
+
+      #rawlings-road h3 {
+        font-size: 23px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #rawlings-road .copy,
+      #rawlings-road circle {
+        transition: none;
+      }
+    }
+  </style>
+
+  <section id="rawlings-road" aria-labelledby="rawlings-road-title">
+    <h2 id="rawlings-road-title">How We Work Together</h2>
+
+    <div class="journey">
+      <svg aria-hidden="true">
+        <path class="route-base"></path>
+        <path class="route"></path>
+        <circle r="5"></circle>
+        <circle r="5"></circle>
+        <circle r="5"></circle>
+        <circle r="5"></circle>
       </svg>
 
-      <div class="grid-hww" style="position:relative; z-index:2; display:grid; grid-template-columns:repeat(4, 1fr); gap:26px; padding-bottom:32px;">
-
-        <!-- Stop 1: Let's Talk -->
-        <div class="reveal hww-stagger-1 hww-step-card" style="background:#F7F5F2; border-radius:14px; box-shadow:0 10px 24px -16px rgba(30,42,58,0.18); padding:34px 26px;">
-          <div style="font-family:'Lato', sans-serif; font-weight:900; font-size:44px; color:#7E642F;">01</div>
-          <h3 style="margin:6px 0 0; font-family:'Lato', sans-serif; font-weight:700; font-size:20px; line-height:1.25; color:#1E2A3A; min-height:52px;">Let's Talk</h3>
-          <div style="margin-top:10px; width:32px; height:2px; background:#C8A96B;"></div>
-          <div style="margin-top:14px; font-size:14px; line-height:1.55; color:rgba(30,42,58,0.68);">A conversation about your business: what's working, what's not, and whether I can help.</div>
+      <article>
+        <div class="copy">
+          <span class="number">01</span>
+          <h3>Let's Talk</h3>
+          <p>
+            A conversation about your business: what's working,
+            what's not, and whether I can help.
+          </p>
         </div>
+      </article>
 
-        <!-- Stop 2: Get To Know the Business -->
-        <div class="reveal hww-stagger-2 hww-step-card hww-offset-down" style="background:#F7F5F2; border-radius:14px; box-shadow:0 10px 24px -16px rgba(30,42,58,0.18); padding:34px 26px;">
-          <div style="font-family:'Lato', sans-serif; font-weight:900; font-size:44px; color:#7E642F;">02</div>
-          <h3 style="margin:6px 0 0; font-family:'Lato', sans-serif; font-weight:700; font-size:20px; line-height:1.25; color:#1E2A3A; min-height:52px;">Get To Know the Business</h3>
-          <div style="margin-top:10px; width:32px; height:2px; background:#C8A96B;"></div>
-          <div style="margin-top:14px; font-size:14px; line-height:1.55; color:rgba(30,42,58,0.68);">If we move forward, I'll get a proper understanding of how things work today: the people, processes, and experience behind the scenes.</div>
+      <article>
+        <div class="copy">
+          <span class="number">02</span>
+          <h3>Get To Know the Business</h3>
+          <p>
+            If we move forward, I'll get a proper understanding of
+            how things work today: the people, processes, and
+            experience behind the scenes.
+          </p>
         </div>
+      </article>
 
-        <!-- Stop 3: Work Out What Comes Next -->
-        <div class="reveal hww-stagger-3 hww-step-card" style="background:#F7F5F2; border-radius:14px; box-shadow:0 10px 24px -16px rgba(30,42,58,0.18); padding:34px 26px;">
-          <div style="font-family:'Lato', sans-serif; font-weight:900; font-size:44px; color:#7E642F;">03</div>
-          <h3 style="margin:6px 0 0; font-family:'Lato', sans-serif; font-weight:700; font-size:20px; line-height:1.25; color:#1E2A3A; min-height:52px;">Work Out What Comes Next</h3>
-          <div style="margin-top:10px; width:32px; height:2px; background:#C8A96B;"></div>
-          <div style="margin-top:14px; font-size:14px; line-height:1.55; color:rgba(30,42,58,0.68);">We'll agree where I can be most useful: a specific project, support within one challenge, or something more ongoing.</div>
+      <article>
+        <div class="copy">
+          <span class="number">03</span>
+          <h3>Work Out What Comes Next</h3>
+          <p>
+            We'll agree where I can be most useful: a specific project,
+            support with one challenge, or something more ongoing.
+          </p>
         </div>
+      </article>
 
-        <!-- Stop 4: Ongoing Support -->
-        <div class="reveal hww-stagger-4 hww-step-card hww-offset-down" style="background:#F7F5F2; border-radius:14px; box-shadow:0 10px 24px -16px rgba(30,42,58,0.18); padding:34px 26px;">
-          <div style="font-family:'Lato', sans-serif; font-weight:900; font-size:44px; color:#7E642F;">04</div>
-          <h3 style="margin:6px 0 0; font-family:'Lato', sans-serif; font-weight:700; font-size:20px; line-height:1.25; color:#1E2A3A; min-height:52px;">Ongoing Support</h3>
-          <div style="margin-top:10px; width:32px; height:2px; background:#C8A96B;"></div>
-          <div style="margin-top:14px; font-size:14px; line-height:1.55; color:rgba(30,42,58,0.68);">Hands-on support, on an ongoing basis. Embedded in your team, in sales, client experience, or operations, for as long as you need.</div>
+      <article>
+        <div class="copy">
+          <span class="number">04</span>
+          <h3>Ongoing Support</h3>
+          <p>
+            Hands-on support, on an ongoing basis: embedded in your
+            team, in intake, client experience, or operations,
+            for as long as you need.
+          </p>
         </div>
-
-      </div>
+      </article>
     </div>
+  </section>
+
+  <script>
+  (() => {
+    const root = document.getElementById("rawlings-road");
+    if (!root) return;
+
+    const area = root.querySelector(".journey");
+    const path = root.querySelector(".route");
+    const base = root.querySelector(".route-base");
+    const rows = [...root.querySelectorAll("article")];
+    const dots = [...root.querySelectorAll("circle")];
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    );
+
+    const duration = 7000;
+    let length = 0;
+    let marks = [];
+    let progress = 0;
+    let started = false;
+    let frame = 0;
+
+    function show(value) {
+      progress = value;
+      path.style.strokeDashoffset = length * (1 - value);
+
+      rows.forEach((row, index) => {
+        const arrived = value >= marks[index];
+        row.classList.toggle("visible", arrived);
+        dots[index].classList.toggle("arrived", arrived);
+      });
+    }
+
+    function layout() {
+      const width = area.clientWidth;
+      if (!width) return;
+
+      const mobile = width < 440;
+      root.classList.toggle("is-mobile", mobile);
+
+      const points = rows.map((row, index) => ({
+        x: width * (mobile ? 0.075 : index % 2 ? 0.57 : 0.43),
+        y: row.offsetTop + row.offsetHeight / 2
+      }));
+
+      let previous = { x: points[0].x, y: 0 };
+      let route = `M ${previous.x} 0`;
+
+      points.forEach(point => {
+        const midpoint = (previous.y + point.y) / 2;
+
+        route += ` C ${previous.x} ${midpoint},
+          ${point.x} ${midpoint}, ${point.x} ${point.y}`;
+
+        previous = point;
+      });
+
+      route += ` C ${previous.x} ${previous.y + 50},
+        ${previous.x} ${area.clientHeight - 20},
+        ${previous.x} ${area.clientHeight}`;
+
+      path.setAttribute("d", route);
+      base.setAttribute("d", route);
+      length = path.getTotalLength();
+
+      marks = points.map(point => {
+        let closest = 0;
+        let smallestDistance = Infinity;
+
+        for (let step = 0; step <= 1000; step++) {
+          const fraction = step / 1000;
+          const sample = path.getPointAtLength(length * fraction);
+          const distance = Math.hypot(
+            sample.x - point.x,
+            sample.y - point.y
+          );
+
+          if (distance < smallestDistance) {
+            smallestDistance = distance;
+            closest = fraction;
+          }
+        }
+
+        return closest;
+      });
+
+      points.forEach((point, index) => {
+        dots[index].setAttribute("cx", point.x);
+        dots[index].setAttribute("cy", point.y);
+      });
+
+      path.style.strokeDasharray = length;
+      show(progress);
+    }
+
+    function play() {
+      if (started) return;
+      started = true;
+
+      if (reducedMotion.matches) {
+        show(1);
+        return;
+      }
+
+      let startTime;
+
+      function tick(time) {
+        if (startTime === undefined) startTime = time;
+
+        show(Math.min(1, (time - startTime) / duration));
+
+        if (progress < 1) {
+          frame = requestAnimationFrame(tick);
+        }
+      }
+
+      frame = requestAnimationFrame(tick);
+    }
+
+    layout();
+    root.classList.add("is-animated");
+
+    if ("ResizeObserver" in window) {
+      new ResizeObserver(layout).observe(area);
+    } else {
+      window.addEventListener("resize", layout);
+    }
+
+    if (document.fonts) {
+      document.fonts.ready.then(layout);
+    }
+
+    if (reducedMotion.matches) {
+      started = true;
+      show(1);
+    } else if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(entries => {
+        if (entries.some(entry => entry.isIntersecting)) {
+          play();
+          observer.disconnect();
+        }
+      }, { threshold: 0.1 });
+
+      observer.observe(root);
+    } else {
+      play();
+    }
+
+    reducedMotion.addEventListener("change", event => {
+      if (event.matches) {
+        cancelAnimationFrame(frame);
+        started = true;
+        show(1);
+      }
+    });
+  })();
+  </script>
   </div>
 
   <!-- TESTIMONIALS -->
