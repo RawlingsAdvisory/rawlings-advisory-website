@@ -207,19 +207,19 @@
       .grid-services > .svc-pillar:nth-child(5) { grid-column: 4 / span 2; }
     }
 
-    /* nav: shrink between 1281-1440 so links never run into the logo; switch to menu button at 1280 and below */
+    /* nav: shrink between 1341-1440 so links never run into the logo; switch to menu button at 1340 and below */
     @media (max-width: 1440px) {
       .nav-logo { height: 96px !important; }
-      .nav-links-desktop { gap: 30px !important; }
+      .nav-links-desktop { gap: 26px !important; }
     }
-    @media (max-width: 1280px) {
+    @media (max-width: 1340px) {
       .nav-links-desktop { display: none !important; }
       .nav-toggle { display: flex !important; align-items: center; justify-content: center; background: none; border: none; cursor: pointer; padding: 8px; width: 40px; height: 40px; }
       .site-nav.nav-menu-open .nav-mobile-menu { display: flex !important; }
       .nav-logo { height: 90px !important; }
       .site-nav { min-height: 106px !important; }
     }
-    @media (min-width: 901px) and (max-width: 1280px) {
+    @media (min-width: 901px) and (max-width: 1340px) {
       .nav-mobile-menu { padding-left: 90px !important; padding-right: 90px !important; }
     }
 
@@ -292,6 +292,7 @@
         <a href="#about" class="nav-link">About</a>
         <a href="#services" class="nav-link">How I Can Help</a>
         <a href="#how-we-work" class="nav-link">How We Work Together</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
         <a href="#testimonials" class="nav-link">Testimonials</a>
         <a href="#faq" class="nav-link">FAQ</a>
         <a href="#contact" class="nav-link">Contact</a>
@@ -304,6 +305,7 @@
       <a href="#about" class="nav-mobile-link">About</a>
       <a href="#services" class="nav-mobile-link">How I Can Help</a>
       <a href="#how-we-work" class="nav-mobile-link">How We Work Together</a>
+      <a href="#pricing" class="nav-mobile-link">Pricing</a>
       <a href="#testimonials" class="nav-mobile-link">Testimonials</a>
       <a href="#faq" class="nav-mobile-link">FAQ</a>
       <a href="#contact" class="nav-mobile-link">Contact</a>
@@ -1158,6 +1160,7 @@
         <a href="#about">About</a>
         <a href="#services">How I Can Help</a>
         <a href="#how-we-work">How We Work Together</a>
+        <a href="#pricing">Pricing</a>
         <a href="#testimonials">Testimonials</a>
         <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
@@ -1212,7 +1215,7 @@ document.addEventListener("DOMContentLoaded", function () {
       link.addEventListener("click", closeMenu);
     });
     window.addEventListener("resize", function () {
-      if (window.innerWidth > 1280) closeMenu();
+      if (window.innerWidth > 1340) closeMenu();
     });
   }
 
