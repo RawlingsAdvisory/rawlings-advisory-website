@@ -852,7 +852,7 @@
   <div id="pricing" class="px90" style="padding-top:80px; padding-bottom:80px; background:#1E2A3A;">
     <style>
       #pricing .price-grid { display:grid; grid-template-columns:repeat(5, 1fr); gap:22px; max-width:1320px; margin:0 auto; align-items:stretch; }
-      #pricing .price-card { display:flex; flex-direction:column; border:1.5px solid #C8A96B; border-radius:20px; padding:30px 22px; background:rgba(247,245,242,0.03); transition: translate 0.35s cubic-bezier(.2,.7,.2,1); }
+      #pricing .price-card { display:flex; flex-direction:column; border:1.5px solid #C8A96B; border-radius:20px; padding:30px 22px; background:rgba(247,245,242,0.03); transition: opacity 0.9s cubic-bezier(.2,.7,.2,1), transform 0.9s cubic-bezier(.2,.7,.2,1), translate 0.35s cubic-bezier(.2,.7,.2,1); }
       #pricing .price-card:hover { translate: 0 -6px; }
       #pricing .price-tag { font-family:'Lato', sans-serif; font-weight:500; font-size:11.5px; letter-spacing:0.14em; text-transform:uppercase; color:#C8A96B; text-align:center; }
       #pricing .price-card h3 { margin:14px 0 0; text-align:center; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:22px; color:#F7F5F2; }
@@ -860,9 +860,9 @@
       #pricing .price-desc { margin-top:14px; font-size:14.5px; line-height:1.6; color:rgba(247,245,242,0.72); text-align:center; flex-grow:1; }
       #pricing .price-amount { margin-top:20px; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:21px; color:#C8A96B; text-align:center; }
       #pricing .price-note { margin-top:6px; font-size:12.5px; line-height:1.5; color:rgba(247,245,242,0.6); text-align:center; }
-      @media (max-width: 1180px) { #pricing .price-grid { grid-template-columns:repeat(3, 1fr); } }
-      @media (max-width: 900px) { #pricing .price-grid { grid-template-columns:repeat(2, 1fr); } }
-      @media (max-width: 560px) { #pricing .price-grid { grid-template-columns:1fr; row-gap:18px; } #pricing { padding-top:56px !important; padding-bottom:56px !important; } }
+      @media (max-width: 1180px) { #pricing .price-grid { grid-template-columns:repeat(6, 1fr); } #pricing .price-card { grid-column:span 2; } #pricing .price-card:nth-child(4) { grid-column:2 / span 2; } }
+      @media (max-width: 900px) { #pricing .price-grid { grid-template-columns:repeat(4, 1fr); } #pricing .price-card, #pricing .price-card:nth-child(4) { grid-column:span 2; } #pricing .price-card:nth-child(5) { grid-column:2 / span 2; } }
+      @media (max-width: 560px) { #pricing .price-grid { grid-template-columns:1fr; row-gap:18px; } #pricing .price-card, #pricing .price-card:nth-child(4), #pricing .price-card:nth-child(5) { grid-column:auto; } #pricing { padding-top:56px !important; padding-bottom:56px !important; } }
     </style>
     <div class="reveal" style="text-align:center; margin-bottom:56px;">
       <div style="font-family:'Lato', sans-serif; font-weight:500; font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#C8A96B;">Ways to Work Together</div>
