@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rawlings Advisory | Client Intake &amp; Experience for NDIS and Aged Care</title>
-  <meta name="description" content="Fractional intake, client experience, operations and leadership support for NDIS providers, aged care providers and disability services. Building teams and systems that genuinely deliver for the people you're there to support.">
-  <link rel="canonical" href="https://www.rawlingsadvisory.com.au/">
+  <meta name="description" content="Hands-on intake, client experience and team training for NDIS and aged care providers in Melbourne and across Australia. Turn more enquiries into care.">
+  <link rel="canonical" href="https://rawlingsadvisory.com.au/">
   <meta name="theme-color" content="#1E2A3A">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
@@ -16,14 +16,14 @@
   <meta property="og:site_name" content="Rawlings Advisory">
   <meta property="og:title" content="Rawlings Advisory | Client Intake &amp; Experience for NDIS and Aged Care">
   <meta property="og:description" content="Fractional intake, client experience, operations and leadership support for NDIS providers, aged care providers and disability services.">
-  <meta property="og:image" content="https://www.rawlingsadvisory.com.au/og-image.jpg">
+  <meta property="og:image" content="https://rawlingsadvisory.com.au/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:url" content="https://www.rawlingsadvisory.com.au/">
+  <meta property="og:url" content="https://rawlingsadvisory.com.au/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Rawlings Advisory | Client Intake &amp; Experience for NDIS and Aged Care">
   <meta name="twitter:description" content="Fractional intake, client experience, operations and leadership support for NDIS providers, aged care providers and disability services.">
-  <meta name="twitter:image" content="https://www.rawlingsadvisory.com.au/og-image.jpg">
+  <meta name="twitter:image" content="https://rawlingsadvisory.com.au/og-image.jpg">
   <meta property="og:locale" content="en_AU">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,9 +36,9 @@
     "@type": "ProfessionalService",
     "name": "Rawlings Advisory",
     "description": "Fractional intake, client experience, operations and leadership support for NDIS providers, aged care providers and disability services.",
-    "url": "https://www.rawlingsadvisory.com.au/",
-    "logo": "https://www.rawlingsadvisory.com.au/logo.png",
-    "image": "https://www.rawlingsadvisory.com.au/og-image.jpg",
+    "url": "https://rawlingsadvisory.com.au/",
+    "logo": "https://rawlingsadvisory.com.au/logo.png",
+    "image": "https://rawlingsadvisory.com.au/og-image.jpg",
     "email": "sophia@rawlingsadvisory.com.au",
     "telephone": "+61493307906",
     "areaServed": {
@@ -90,12 +90,12 @@
       {
         "@type": "Question",
         "name": "How is pricing worked out?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Every engagement is scoped around the business rather than sold as a fixed package, so investment depends on the size and shape of the work. This is discussed on a discovery call before anything is agreed." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Owner-led businesses can start with a Fix-It Day from $1,500 + GST or a Two-Day Intensive from $2,000 + GST. Growing teams start with a Team Health Check from $2,000 + GST, credited towards what comes next. Ongoing support is from $4,500 + GST per month, and bigger projects or multi-session training are quoted to fit your team. The cost is always agreed before any work starts." }
       },
       {
         "@type": "Question",
         "name": "How do you get started with Rawlings Advisory?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Book a discovery call through the contact form on the website to have a conversation about where things stand and whether it's a good fit." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Book a free 30-minute discovery call using the calendar on the website, or send a message through the contact form, to have a conversation about where things stand and whether it's a good fit." }
       }
     ]
   }
@@ -207,6 +207,22 @@
       .grid-services > .svc-pillar:nth-child(5) { grid-column: 4 / span 2; }
     }
 
+    /* nav: shrink between 1281-1440 so links never run into the logo; switch to menu button at 1280 and below */
+    @media (max-width: 1440px) {
+      .nav-logo { height: 96px !important; }
+      .nav-links-desktop { gap: 30px !important; }
+    }
+    @media (max-width: 1280px) {
+      .nav-links-desktop { display: none !important; }
+      .nav-toggle { display: flex !important; align-items: center; justify-content: center; background: none; border: none; cursor: pointer; padding: 8px; width: 40px; height: 40px; }
+      .site-nav.nav-menu-open .nav-mobile-menu { display: flex !important; }
+      .nav-logo { height: 90px !important; }
+      .site-nav { min-height: 106px !important; }
+    }
+    @media (min-width: 901px) and (max-width: 1280px) {
+      .nav-mobile-menu { padding-left: 90px !important; padding-right: 90px !important; }
+    }
+
     @media (max-width: 900px) {
       .px90 { padding-left: 48px !important; padding-right: 48px !important; }
       .site-nav { padding: 20px 24px !important; min-height: 92px !important; }
@@ -270,7 +286,7 @@
 
   <!-- NAV (over hero, fixed + scroll-reactive) -->
   <nav class="site-nav" style="position:fixed; top:0; left:0; right:0; z-index:100; padding:38px 90px;">
-    <img src="./logo.png" alt="Rawlings Advisory" class="nav-logo" style="position:absolute; top:0; left:90px; height:115px; width:auto; display:block;">
+    <img src="./logo.png" alt="Rawlings Advisory" class="nav-logo" width="1000" height="230" style="position:absolute; top:0; left:90px; height:115px; width:auto; display:block;">
     <div style="display:flex; align-items:center; justify-content:flex-end;">
       <div class="nav-links-desktop" style="display:flex; gap:46px; font-family:'Lato', sans-serif; font-weight:500; font-size:15px; letter-spacing:0.02em; color:#F7F5F2;">
         <a href="#about" class="nav-link">About</a>
@@ -369,7 +385,7 @@
   <div id="about" class="px90" style="padding-top:80px; padding-bottom:80px; background:#F7F5F2;">
   <div class="grid-about" style="max-width:1320px; margin:0 auto; display:grid; grid-template-columns:5fr 7fr; align-items:stretch;">
     <div class="reveal about-photo" style="position:relative; background:#1E2A3A; min-height:560px; overflow:hidden;">
-      <img src="./headshot.jpg" alt="Sophia Rawlings, Founder of Rawlings Advisory" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 15%;">
+      <img src="./headshot.jpg" alt="Sophia Rawlings, Founder of Rawlings Advisory" width="700" height="773" loading="lazy" decoding="async" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 15%;">
       <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(30,42,58,0.05) 0%, rgba(30,42,58,0.08) 50%, rgba(30,42,58,0.92) 100%);"></div>
       <svg aria-hidden="true" width="220" height="220" viewBox="0 0 220 220" style="position:absolute; top:-40px; right:-60px; opacity:0.4;"><circle cx="110" cy="110" r="108" fill="none" stroke="#C8A96B" stroke-width="1.4"></circle></svg>
       <div style="position:absolute; inset:44px; border:1px solid rgba(247,245,242,0.35); pointer-events:none;"></div>
@@ -389,22 +405,22 @@
       <div class="about-stats" style="margin-top:10px; max-width:600px;">
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:28px 40px;">
           <div>
-            <span><span class="stat-num" data-target="10" style="font-family:'Cormorant Garamond', serif; font-weight:800; font-size:40px; color:#C8A96B;">0</span><span style="font-family:'Cormorant Garamond', serif; font-weight:800; font-size:40px; color:#C8A96B;">+</span></span>
+            <span><span class="stat-num" data-target="10" style="font-family:'Cormorant Garamond', serif; font-weight:800; font-size:40px; color:#C8A96B;">10</span><span style="font-family:'Cormorant Garamond', serif; font-weight:800; font-size:40px; color:#C8A96B;">+</span></span>
             <div style="font-family:'Lato', sans-serif; font-size:13.5px; color:#1E2A3A; margin-top:6px;">Years in intake &amp; client experience</div>
           </div>
           <div>
-            <span><span class="stat-num" data-target="10" style="font-family:'Cormorant Garamond', serif; font-weight:800; font-size:40px; color:#C8A96B;">0</span><span style="font-family:'Cormorant Garamond', serif; font-weight:800; font-size:40px; color:#C8A96B;">+</span></span>
+            <span><span class="stat-num" data-target="10" style="font-family:'Cormorant Garamond', serif; font-weight:800; font-size:40px; color:#C8A96B;">10</span><span style="font-family:'Cormorant Garamond', serif; font-weight:800; font-size:40px; color:#C8A96B;">+</span></span>
             <div style="font-family:'Lato', sans-serif; font-size:13.5px; color:#1E2A3A; margin-top:6px;">Years leading &amp; developing teams</div>
           </div>
         </div>
         <div style="height:1px; background:#C8A96B; margin:26px 0;"></div>
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:28px 40px;">
           <div>
-            <span><span class="stat-num" data-target="6" style="font-family:'Cormorant Garamond', serif; font-weight:800; font-size:40px; color:#C8A96B;">0</span><span style="font-family:'Cormorant Garamond', serif; font-weight:800; font-size:40px; color:#C8A96B;">+</span></span>
+            <span><span class="stat-num" data-target="6" style="font-family:'Cormorant Garamond', serif; font-weight:800; font-size:40px; color:#C8A96B;">6</span><span style="font-family:'Cormorant Garamond', serif; font-weight:800; font-size:40px; color:#C8A96B;">+</span></span>
             <div style="font-family:'Lato', sans-serif; font-size:13.5px; color:#1E2A3A; margin-top:6px;">Years in health, disability &amp; aged care</div>
           </div>
           <div>
-            <span class="stat-num" data-target="3" style="font-family:'Cormorant Garamond', serif; font-weight:800; font-size:40px; color:#C8A96B;">0</span>
+            <span class="stat-num" data-target="3" style="font-family:'Cormorant Garamond', serif; font-weight:800; font-size:40px; color:#C8A96B;">3</span>
             <div style="font-family:'Lato', sans-serif; font-size:13.5px; color:#1E2A3A; margin-top:6px;">Countries worked in across healthcare</div>
           </div>
         </div>
@@ -423,7 +439,7 @@
 
       <div class="reveal svc-stagger-1 svc-pillar" style="display:flex; flex-direction:column; border:1.5px solid #C8A96B; border-radius:20px; background:#F7F5F2; padding:34px 22px;">
         <div class="svc-icon" style="flex-shrink:0; width:56px; height:56px; border-radius:50%; overflow:hidden; margin:0 auto;">
-          <img src="./service-icon-1.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;">
+          <img src="./service-icon-1.png" alt="" width="200" height="200" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
         </div>
         <h3 style="margin:20px 0 0; text-align:center; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:20px; color:#1E2A3A;">Client Intake</h3>
         <div style="margin:10px auto 0; width:28px; height:2px; background:#C8A96B;"></div>
@@ -432,7 +448,7 @@
 
       <div class="reveal svc-stagger-2 svc-pillar" style="display:flex; flex-direction:column; border:1.5px solid #C8A96B; border-radius:20px; background:#F7F5F2; padding:34px 22px;">
         <div class="svc-icon" style="flex-shrink:0; width:56px; height:56px; border-radius:50%; overflow:hidden; margin:0 auto;">
-          <img src="./service-icon-2.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;">
+          <img src="./service-icon-2.png" alt="" width="200" height="200" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
         </div>
         <h3 style="margin:20px 0 0; text-align:center; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:20px; color:#1E2A3A;">Client Experience</h3>
         <div style="margin:10px auto 0; width:28px; height:2px; background:#C8A96B;"></div>
@@ -441,7 +457,7 @@
 
       <div class="reveal svc-stagger-3 svc-pillar" style="display:flex; flex-direction:column; border:1.5px solid #C8A96B; border-radius:20px; background:#F7F5F2; padding:34px 22px;">
         <div class="svc-icon" style="flex-shrink:0; width:56px; height:56px; border-radius:50%; overflow:hidden; margin:0 auto;">
-          <img src="./service-icon-3.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;">
+          <img src="./service-icon-3.png" alt="" width="200" height="200" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
         </div>
         <h3 style="margin:20px 0 0; text-align:center; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:20px; color:#1E2A3A;">Operations &amp; Leadership</h3>
         <div style="margin:10px auto 0; width:28px; height:2px; background:#C8A96B;"></div>
@@ -450,7 +466,7 @@
 
       <div class="reveal svc-stagger-4 svc-pillar" style="display:flex; flex-direction:column; border:1.5px solid #C8A96B; border-radius:20px; background:#F7F5F2; padding:34px 22px;">
         <div class="svc-icon" style="flex-shrink:0; width:56px; height:56px; border-radius:50%; overflow:hidden; margin:0 auto;">
-          <img src="./service-icon-4.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;">
+          <img src="./service-icon-4.png" alt="" width="200" height="200" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
         </div>
         <h3 style="margin:20px 0 0; text-align:center; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:20px; color:#1E2A3A;">Systems &amp; Process</h3>
         <div style="margin:10px auto 0; width:28px; height:2px; background:#C8A96B;"></div>
@@ -1037,7 +1053,7 @@
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
         <div class="faq-a-wrap" id="faq-a-5">
-          <div class="faq-a-inner"><p>Every engagement is scoped around your business rather than sold as a fixed package, so investment depends on the size and shape of the work. We'll talk it through properly on a discovery call before anything's agreed.</p></div>
+          <div class="faq-a-inner"><p>Each way of working together has a clear starting price, so you know where you stand before we talk. Owner-led businesses usually start from $1,500 + GST, growing teams with a Team Health Check from $2,000 + GST (credited towards what comes next), and bigger projects are quoted to fit your team. We'll always agree the cost before any work starts. <a href="#pricing" style="color:#C8A96B; text-decoration:underline; text-underline-offset:3px;">See pricing</a>.</p></div>
         </div>
       </div>
 
@@ -1047,7 +1063,7 @@
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
         <div class="faq-a-wrap" id="faq-a-6">
-          <div class="faq-a-inner"><p>Book a discovery call through the contact form below. We'll have a conversation about where things stand and whether it's a good fit, no pressure either way.</p></div>
+          <div class="faq-a-inner"><p>Book a free 30-minute discovery call using the calendar below, or send me a message through the contact form. We'll have a conversation about where things stand and whether it's a good fit, no pressure either way.</p></div>
         </div>
       </div>
 
@@ -1196,12 +1212,12 @@ document.addEventListener("DOMContentLoaded", function () {
       link.addEventListener("click", closeMenu);
     });
     window.addEventListener("resize", function () {
-      if (window.innerWidth > 900) closeMenu();
+      if (window.innerWidth > 1280) closeMenu();
     });
   }
 
   // contact form: submit to Formspree, which emails the enquiry straight to Sophia
-  var FORM_ENDPOINT = "https://formspree.io/f/xnpqzyvq"; // replace YOUR_FORM_ID with the endpoint from your Formspree form
+  var FORM_ENDPOINT = "https://formspree.io/f/xnpqzyvq";
   var contactForm = document.getElementById("contact-form");
   if (contactForm) {
     contactForm.addEventListener("submit", function (e) {
@@ -1224,13 +1240,13 @@ document.addEventListener("DOMContentLoaded", function () {
         headers: { "Accept": "application/json" }
       }).then(function (response) {
         if (response.ok) {
-          if (status) status.textContent = "Thanks — I'll be in touch soon.";
+          if (status) status.textContent = "Thanks, I'll be in touch soon.";
           contactForm.reset();
         } else {
-          if (status) status.textContent = "Something went wrong — please email sophia@rawlingsadvisory.com.au directly.";
+          if (status) status.textContent = "Something went wrong. Please email sophia@rawlingsadvisory.com.au directly.";
         }
       }).catch(function () {
-        if (status) status.textContent = "Something went wrong — please email sophia@rawlingsadvisory.com.au directly.";
+        if (status) status.textContent = "Something went wrong. Please email sophia@rawlingsadvisory.com.au directly.";
       }).finally(function () {
         if (submitBtn) submitBtn.disabled = false;
       });
@@ -1273,7 +1289,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         });
       }, { threshold: 0.5 });
-      statEls.forEach(function (el) { statIO.observe(el); });
+      statEls.forEach(function (el) { el.textContent = "0"; statIO.observe(el); });
     }
   }
 
