@@ -80,7 +80,7 @@
       {
         "@type": "Question",
         "name": "What does an engagement with Rawlings Advisory look like?",
-        "acceptedAnswer": { "@type": "Answer", "text": "It usually starts with a short health check, around a week, to get a clear picture of what's working and what isn't. From there it's either a defined project or ongoing, embedded support, depending on what the business needs." }
+        "acceptedAnswer": { "@type": "Answer", "text": "It depends on the size of your business. Owner-led businesses usually start with a Fix-It Day or Two-Day Intensive, where we find what's slowing you down and fix it on the spot. Growing teams start with a Team Health Check: two days observing the team (up to a week for larger organisations), then a clear plan for custom work or training. From there, ongoing support is one day a week." }
       },
       {
         "@type": "Question",
@@ -192,7 +192,7 @@
     .faq-a-inner p { margin: 0 2px 26px; max-width: 640px; font-size: 15.5px; line-height: 1.7; color: rgba(247,245,242,0.68); }
 
     /* Offset anchor-scroll targets so section headings clear the fixed nav bar */
-    #about, #services, #how-we-work, #testimonials, #faq, #book-a-call, #contact, #sound-familiar { scroll-margin-top: 140px; }
+    #about, #services, #how-we-work, #testimonials, #faq, #book-a-call, #contact, #sound-familiar, #pricing { scroll-margin-top: 140px; }
 
     /* ============ RESPONSIVE ============ */
     .px90 { padding-left: 90px; padding-right: 90px; }
@@ -210,7 +210,7 @@
     @media (max-width: 900px) {
       .px90 { padding-left: 48px !important; padding-right: 48px !important; }
       .site-nav { padding: 20px 24px !important; min-height: 92px !important; }
-      #about, #services, #how-we-work, #testimonials, #faq, #book-a-call, #contact, #sound-familiar { scroll-margin-top: 108px; }
+      #about, #services, #how-we-work, #testimonials, #faq, #book-a-call, #contact, #sound-familiar, #pricing { scroll-margin-top: 108px; }
       .nav-logo { height: 74px !important; left: 24px !important; }
       .nav-links-desktop { display: none !important; }
       .nav-toggle { display: flex !important; align-items: center; justify-content: center; background: none; border: none; cursor: pointer; padding: 8px; width: 40px; height: 40px; }
@@ -239,7 +239,7 @@
       .px90 { padding-left: 24px !important; padding-right: 24px !important; }
       .nav-logo { height: 58px !important; }
       .site-nav { min-height: 76px !important; }
-      #about, #services, #how-we-work, #testimonials, #faq, #book-a-call, #contact, #sound-familiar { scroll-margin-top: 92px; }
+      #about, #services, #how-we-work, #testimonials, #faq, #book-a-call, #contact, #sound-familiar, #pricing { scroll-margin-top: 92px; }
       .grid-benefits { grid-template-columns: 1fr !important; }
       .hero-ctas { flex-direction: column !important; align-items: stretch !important; }
       .hero-ctas a { text-align: center !important; }
@@ -848,6 +848,76 @@
   </script>
   </div>
 
+  <!-- WAYS TO WORK TOGETHER (pricing) -->
+  <div id="pricing" class="px90" style="padding-top:80px; padding-bottom:80px; background:#1E2A3A;">
+    <style>
+      #pricing .price-grid { display:grid; grid-template-columns:repeat(5, 1fr); gap:22px; max-width:1320px; margin:0 auto; align-items:stretch; }
+      #pricing .price-card { display:flex; flex-direction:column; border:1.5px solid #C8A96B; border-radius:20px; padding:30px 22px; background:rgba(247,245,242,0.03); transition: translate 0.35s cubic-bezier(.2,.7,.2,1); }
+      #pricing .price-card:hover { translate: 0 -6px; }
+      #pricing .price-tag { font-family:'Lato', sans-serif; font-weight:500; font-size:11.5px; letter-spacing:0.14em; text-transform:uppercase; color:#C8A96B; text-align:center; }
+      #pricing .price-card h3 { margin:14px 0 0; text-align:center; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:22px; color:#F7F5F2; }
+      #pricing .price-rule { margin:12px auto 0; width:28px; height:2px; background:#C8A96B; }
+      #pricing .price-desc { margin-top:14px; font-size:14.5px; line-height:1.6; color:rgba(247,245,242,0.72); text-align:center; flex-grow:1; }
+      #pricing .price-amount { margin-top:20px; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:21px; color:#C8A96B; text-align:center; }
+      #pricing .price-note { margin-top:6px; font-size:12.5px; line-height:1.5; color:rgba(247,245,242,0.6); text-align:center; }
+      @media (max-width: 1180px) { #pricing .price-grid { grid-template-columns:repeat(3, 1fr); } }
+      @media (max-width: 900px) { #pricing .price-grid { grid-template-columns:repeat(2, 1fr); } }
+      @media (max-width: 560px) { #pricing .price-grid { grid-template-columns:1fr; row-gap:18px; } #pricing { padding-top:56px !important; padding-bottom:56px !important; } }
+    </style>
+    <div class="reveal" style="text-align:center; margin-bottom:56px;">
+      <div style="font-family:'Lato', sans-serif; font-weight:500; font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#C8A96B;">Ways to Work Together</div>
+      <h2 style="margin:16px 0 0; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:clamp(28px, 4.5vw, 40px); color:#F7F5F2;">Find Your Starting Point</h2>
+    </div>
+    <div class="price-grid">
+
+      <div class="reveal price-card">
+        <div class="price-tag">Owner-led businesses</div>
+        <h3>Fix-It Day</h3>
+        <div class="price-rule"></div>
+        <div class="price-desc">One day together to untangle your enquiries and set up fixes that give you time back.</div>
+        <div class="price-amount">From $1,500 + GST</div>
+      </div>
+
+      <div class="reveal price-card">
+        <div class="price-tag">Owner-led businesses</div>
+        <h3>Two-Day Intensive</h3>
+        <div class="price-rule"></div>
+        <div class="price-desc">A day to diagnose, a day to implement.</div>
+        <div class="price-amount">From $2,000 + GST</div>
+      </div>
+
+      <div class="reveal price-card">
+        <div class="price-tag">Growing teams</div>
+        <h3>Team Health Check</h3>
+        <div class="price-rule"></div>
+        <div class="price-desc">I spend time with your team, see where enquiries and handovers slip, and leave you with a clear training plan.</div>
+        <div class="price-amount">From $2,000 + GST</div>
+        <div class="price-note">Credited towards what comes next</div>
+      </div>
+
+      <div class="reveal price-card">
+        <div class="price-tag">Growing teams</div>
+        <h3>Custom Projects &amp; Training</h3>
+        <div class="price-rule"></div>
+        <div class="price-desc">For bigger pieces of work, from rebuilding your intake process to multi-session team training. Scoped after a Team Health Check.</div>
+        <div class="price-amount">Quoted to fit your team</div>
+      </div>
+
+      <div class="reveal price-card">
+        <div class="price-tag">Ongoing</div>
+        <h3>Ongoing Support</h3>
+        <div class="price-rule"></div>
+        <div class="price-desc">A day a week alongside your team.</div>
+        <div class="price-amount">From $4,500 + GST</div>
+        <div class="price-note">per month</div>
+      </div>
+
+    </div>
+    <div class="reveal" style="text-align:center; margin-top:44px; font-size:15.5px; color:rgba(247,245,242,0.72);">
+      Not sure which fits? <a href="#book-a-call" style="color:#C8A96B; font-weight:600; text-decoration:underline; text-underline-offset:3px;">Book a 30-minute chat</a> and we'll work it out together.
+    </div>
+  </div>
+
   <!-- TESTIMONIALS -->
   <div id="testimonials" class="px90" style="padding-top:80px; padding-bottom:80px; background:#F7F5F2; overflow:hidden;">
     <div class="reveal" style="text-align:center; margin-bottom:56px; position:relative; max-width:1320px; margin-left:auto; margin-right:auto;">
@@ -947,7 +1017,7 @@
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
         <div class="faq-a-wrap" id="faq-a-3">
-          <div class="faq-a-inner"><p>It usually starts with a short health check, around a week, to get a clear picture of what's working and what isn't. From there we either scope a defined project or move into ongoing, embedded support, depending on what the business actually needs.</p></div>
+          <div class="faq-a-inner"><p>It depends on the size of your business. Owner-led businesses usually start with a Fix-It Day or Two-Day Intensive, where we find what's slowing you down and fix it on the spot. Growing teams start with a Team Health Check: two days observing the team (up to a week for larger organisations), then a clear plan for custom work or training. From there, ongoing support is one day a week. <a href="#pricing" style="color:#C8A96B; text-decoration:underline; text-underline-offset:3px;">See pricing</a>.</p></div>
         </div>
       </div>
 
